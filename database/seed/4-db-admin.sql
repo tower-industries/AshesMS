@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.22, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: cosmic
+-- Host: 127.0.0.1    Database: ashes 
 -- ------------------------------------------------------
 -- Server version	8.0.19
 
@@ -15,7 +15,7 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
-USE `cosmic`;
+USE `ashes`;
 
 --
 -- Dumping data for table `accounts`
