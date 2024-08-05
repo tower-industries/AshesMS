@@ -1,5 +1,5 @@
-﻿# Cosmic
-Cosmic is a server emulator for Global MapleStory (GMS) version 83.
+﻿# AshesMS 
+AshesMS is a server emulator for Global MapleStory (GMS) version 83 based off of the Cosmic open source project.
 
 ## Introduction
 
@@ -7,11 +7,10 @@ Cosmic launched on March 2021. It is based on code from a long line of server em
 
 This is mainly a Java based project, but there are also a bunch of scripts written in JavaScript.
 
-Head developer and maintainer: __Ponk__.\
-Contributors: a lot of people over the years, and hopefully more to come. Big thanks to everyone who has contributed so far!
+Head developer and maintainer: marlo\
+Contributors: Ponk, a lot of people over the years, and hopefully more to come. Big thanks to everyone who has contributed so far!
 
-Join the Discord server where most of the discussions take place: https://discord.gg/JU5aQapVZK
-
+Join the Discord server where most of the discussions take place: https://discord.gg/x4qHEUyn
 ### Goals
 What we are working towards.
 * __Vanilla gameplay__ - stay as close to the original game as possible (within reason).
@@ -28,25 +27,7 @@ Explicitly excluded from the scope of the project.
 ## Project setup
 
 ### Contribute
-You may contribute to the project in various ways, mainly through GitHub:
-* Providing improvements to the code through a [Pull Request](https://github.com/P0nk/Cosmic/pulls) from your own fork. 
-* Reporting a bug by creating an [Issue](https://github.com/P0nk/Cosmic/issues).
-* Providing information to existing issues or reviewing pull requests that others have made.
-* ...and in other ways that I haven't thought of!
-
-### Continuous integration
-A GitHub Actions pipeline is set up to run the build automatically when a new pull request is opened or commits are pushed to an existing one. This ensures that the code compiles and all the tests pass.
-
-Once a pull request is merged, a tag with the new version is automatically created.
-
-### Discord integration
-Most GitHub activity is pushed to a Discord channel for visibility. This works by leveraging a webhook. The activity includes (but is not limited to): merged commits, created PRs, comments, and new tags.
-
-### Versioning
-The project follows the [semantic versioning](https://semver.org/) scheme using git tags.
-* *Bug fixes* are treated as PATCH: 1.2.__3__ -> 1.2.__4__
-* *General changes or improvements* are treated as MINOR: 1.__2__.3 -> 1.__3.0__
-* *Major changes* are treated as MAJOR: __1__.2.3 -> __2.0.0__
+Outside contributions aren't being accepted at the moment, but feel free to make feature requests in the Discord.
 
 ## Getting started
 Follow along as I go through the steps to play the game on your local computer from start to finish. I won't go into extreme detail, so if you don't have prior experience with Java or git, you might struggle.
@@ -62,42 +43,28 @@ You will start by installing the database server and client, and then run some s
 #### Steps
 
 1. Download and install [MySQL Community Server 8+](https://dev.mysql.com/downloads/mysql/). You will have to set a root password, make sure you don't lose it because you will need it later.
-2. Download and install [HeidiSQL](https://www.heidisql.com/download.php).
-3. Open HeidiSQL and connect to the database ("New" -> "Session in root folder" -> fill in password -> "Open").
-4. Run all four scripts located in database/sql in order. Starting with ``1-db_database.sql`` and ending with ``4-db-admin.sql``. In HeidiSQL: "File" -> "Run SQL File...".
-5. The database is ready!
+2. Run all four scripts located in database/sql in order. Starting with ``1-db_database.sql`` and ending with ``4-db-admin.sql``. In HeidiSQL: "File" -> "Run SQL File...".
+3. The database is ready!
 
 ### 2 - Server
 You will start by cloning the repository, then configure the database properties and lastly start the server.
 
 #### Prerequisites
-* Java 21 (I recommend [Amazon Corretto](https://aws.amazon.com/corretto))
-* IDE (I recommend [IntelliJ IDEA](https://www.jetbrains.com/idea/))
+* Java 21
 
 #### Steps
 
-1. Clone Cosmic into a new project. In IntelliJ, you would create a new project from version control.
+1. Clone AshesMS into a new project. In IntelliJ, you would create a new project from version control.
 2. Open _config.yaml_. Find "DB_PASS" and set it to your database root user password.
 3. Start the server. The main method is located in `net.server.Server`.
-4. If you see "Cosmic is now online" in the console, it means the server is online and ready to serve traffic. Yay!
+4. If you see "AshesMS is now online" in the console, it means the server is online and ready to serve traffic. Yay!
 
 Below, I list other ways of running the server which are completely optional.
-
-#### Docker
-Support for Docker is also provided out of the box, as an alternative to running straight in the IDE. If you have [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed it's as easy as running `docker compose up`.
-
-Making changes becomes a bit more tedious though as you have to rebuild the server image via `docker compose up --build`.
-
-On the first launch, the database container will run the scripts which may take so long that the server fails to start. In that case, just wait until the database is done running the scripts and then retry (Ctrl+C and re-run the command).
 
 #### Jar
 Another option is to start the server from a terminal by running a jar file. You first need to build the jar file from source which requires [Maven](https://maven.apache.org/).
 
 Building the jar file is as easy as running ``mvn clean package``. The project is configured to produce a "fat" jar which contains all dependencies (by utilizing the _maven-assembly-plugin_). Note that the WZ XML files are __not__ included in the jar.
-
-To run the jar, a ``launch.bat`` file is provided for convenience. Simply double-click it and the server will start in a new terminal window. 
-
-Alternatively, run the jar file from the terminal. Just remember to provide the `wz-path` system property pointing to your wz directory.
 
 ### 3 - Client
 You will start by installing the game with the old installer, then overwrite some WZ files with our custom ones, and lastly get the localhost executable in place.
