@@ -907,7 +907,7 @@ public class PacketCreator {
             addCharEntry(p, chr, false);
         }
 
-		p.writeByte(2);
+	p.writeByte(2);
         p.writeInt(YamlConfig.config.server.COLLECTIVE_CHARSLOT ? chars.size() + c.getAvailableCharacterSlots() : c.getCharacterSlots());
         return p;
     }
