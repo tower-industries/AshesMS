@@ -589,20 +589,7 @@ public class Client extends ChannelInboundHandlerAdapter {
     }
 
     public boolean checkPin(String other) {
-        if (!(YamlConfig.config.server.ENABLE_PIN && !canBypassPin())) {
-            return true;
-        }
-
-        pinattempt++;
-        if (pinattempt > 5) {
-            SessionCoordinator.getInstance().closeSession(this, false);
-        }
-        if (pin.equals(other)) {
-            pinattempt = 0;
-            LoginBypassCoordinator.getInstance().registerLoginBypassEntry(hwid, accId, false);
-            return true;
-        }
-        return false;
+		return true;
     }
 
     public void setPic(String pic) {
@@ -622,20 +609,7 @@ public class Client extends ChannelInboundHandlerAdapter {
     }
 
     public boolean checkPic(String other) {
-        if (!(YamlConfig.config.server.ENABLE_PIC && !canBypassPic())) {
-            return true;
-        }
-
-        picattempt++;
-        if (picattempt > 5) {
-            SessionCoordinator.getInstance().closeSession(this, false);
-        }
-        if (pic.equals(other)) {    // thanks ryantpayton (HeavenClient) for noticing null pics being checked here
-            picattempt = 0;
-            LoginBypassCoordinator.getInstance().registerLoginBypassEntry(hwid, accId, true);
-            return true;
-        }
-        return false;
+		return true;
     }
 
     public int login(String login, String pwd, Hwid hwid) {
@@ -1581,14 +1555,6 @@ public class Client extends ChannelInboundHandlerAdapter {
 
     public void enableCSActions() {
         sendPacket(PacketCreator.enableCSUse(player));
-    }
-
-    public boolean canBypassPin() {
-        return LoginBypassCoordinator.getInstance().canLoginBypass(hwid, accId, false);
-    }
-
-    public boolean canBypassPic() {
-        return LoginBypassCoordinator.getInstance().canLoginBypass(hwid, accId, true);
     }
 
     public int getLanguage() {

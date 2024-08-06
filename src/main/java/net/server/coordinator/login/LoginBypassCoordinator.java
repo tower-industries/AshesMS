@@ -59,27 +59,6 @@ public class LoginBypassCoordinator {
         }
     }
 
-    public void registerLoginBypassEntry(Hwid hwid, int accId, boolean pic) {
-        long expireTime = (pic ? YamlConfig.config.server.BYPASS_PIC_EXPIRATION : YamlConfig.config.server.BYPASS_PIN_EXPIRATION);
-        if (expireTime > 0) {
-            Pair<Hwid, Integer> entry = new Pair<>(hwid, accId);
-            expireTime = Server.getInstance().getCurrentTime() + MINUTES.toMillis(expireTime);
-            try {
-                pic |= loginBypass.get(entry).getLeft();
-                expireTime = Math.max(loginBypass.get(entry).getRight(), expireTime);
-            } catch (NullPointerException npe) {
-            }
-
-            loginBypass.put(entry, new Pair<>(pic, expireTime));
-        }
-    }
-
-    public void unregisterLoginBypassEntry(Hwid hwid, int accId) {
-        String hwidValue = hwid == null ? null : hwid.hwid();
-        Pair<String, Integer> entry = new Pair<>(hwidValue, accId);
-        loginBypass.remove(entry);
-    }
-
     public void runUpdateLoginBypass() {
         if (!loginBypass.isEmpty()) {
             List<Pair<Hwid, Integer>> toRemove = new LinkedList<>();
