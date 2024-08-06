@@ -37,36 +37,32 @@ We will set up the following:
 - Server - the server is the "brain" and routes network traffic between the clients.
 - Client - the client is the application used to _play the game_, i.e. MapleStory.exe.
 
-### 1 - Database 
+### Database 
 You will start by installing the database server and client, and then run some scripts to prepare it for the server.
 
 #### Steps
-
-1. Download and install [MySQL Community Server 8+](https://dev.mysql.com/downloads/mysql/). You will have to set a root password, make sure you don't lose it because you will need it later.
-2. Run all four scripts located in database/sql in order. Starting with ``1-db_database.sql`` and ending with ``4-db-admin.sql``. In HeidiSQL: "File" -> "Run SQL File...".
+1. Download and install MySQL Server 8+. You will have to set a root password, make sure you don't lose it because you will need it later.
+2. Run all four scripts located in database/seed in order. `mysql -u root < file-name.sql` (to be replaced by a migration framework)
 3. The database is ready!
 
-### 2 - Server
+### Server
 You will start by cloning the repository, then configure the database properties and lastly start the server.
 
 #### Prerequisites
+* [asdf](https://asdf-vm.com/): optional, used to manage Java versions
 * Java 21
+* Gradle 8.9
 
 #### Steps
-
-1. Clone AshesMS into a new project. In IntelliJ, you would create a new project from version control.
-2. Open _config.yaml_. Find "DB_PASS" and set it to your database root user password.
-3. Start the server. The main method is located in `net.server.Server`.
-4. If you see "AshesMS is now online" in the console, it means the server is online and ready to serve traffic. Yay!
-
-Below, I list other ways of running the server which are completely optional.
+1. Clone AshesMS into a new project.
+2. Make sure the "DB_PASS" is set as an environment variable in your shell as the MySQL `root` user password.
+3. Start the server using Gradle, i.e. `gradle run`
+4. If you see "Ashes is now online" in the console, it means the server is online and ready to serve traffic. Yay!
 
 #### Jar
-Another option is to start the server from a terminal by running a jar file. You first need to build the jar file from source which requires [Maven](https://maven.apache.org/).
+Another option is to start the server from a terminal by building and executing a `.jar` and running it on the JVM. Run `gradle build` which will produce a "fat jar" which contains all the dependencies. Execute with `java -Xmx2048m -Dwz-path=wz -jar AshesMS-all.jar`
 
-Building the jar file is as easy as running ``mvn clean package``. The project is configured to produce a "fat" jar which contains all dependencies (by utilizing the _maven-assembly-plugin_). Note that the WZ XML files are __not__ included in the jar.
-
-### 3 - Client
+### Client
 You will start by installing the game with the old installer, then overwrite some WZ files with our custom ones, and lastly get the localhost executable in place.
 
 #### Steps
@@ -85,9 +81,6 @@ You will start by installing the game with the old installer, then overwrite som
 **Important note about localhost clients**: these executables are red-flagged by antivirus tools as potentially malicious software.
 This happens due to the reverse engineering methods that were applied onto these software artifacts. 
 The one provided here has been in use for years already and posed no harm so far, so it is assumed to be safe.
-
-### 4 - Getting into the game
-The client has started, and you're looking at the login screen. 
 
 #### Logging in
 At this point, you can log in to the admin account using the following credentials:
@@ -110,12 +103,7 @@ That's it, have fun playing around in game!
 ## Advanced concepts
 Some slightly more advanced concepts that might be useful once you're up and running.
 
-### Host on remote server
-You don't have to host the server on your local machine to play. It's possible to host on a remote server such as a VPS or even a dedicated server.
-
-I leave it to you to figure out the server hosting part, but once you have that running you'll need to edit the client exe to point to your remote server ip.
-
-#### Edit client ip
+### Edit client ip
 1. Download and install a hex editor: [HxD](https://mh-nexus.de/en/hxd/)
 2. Start HxD and open your client exe (I recommend making a copy of it first). At this point you should see a bunch of hex codes and a "Decoded text" column to the right of it.
 3. Ctrl+f and search for Text-string "127.0.0.1". You should find three occurrences right above each other.
