@@ -24,12 +24,6 @@ public class ServerConfig {
     public long COUPON_INTERVAL;
     public long UPDATE_INTERVAL;
 
-    public boolean ENABLE_PIC;
-    public boolean ENABLE_PIN;
-
-    public int BYPASS_PIC_EXPIRATION;
-    public int BYPASS_PIN_EXPIRATION;
-
     public boolean AUTOMATIC_REGISTER;
     public boolean BCRYPT_MIGRATION;
     public boolean COLLECTIVE_CHARSLOT;
