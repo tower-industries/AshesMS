@@ -28,3 +28,7 @@ database/docker-pg-db-data
 
 # Logs
 logs/
+
+# Environment Variables
+.envrc
+.env
