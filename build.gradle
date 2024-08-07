@@ -1,12 +1,27 @@
+buildscript {
+	repositories {
+		mavenCentral()
+	}
+
+	dependencies {
+		classpath "org.flywaydb:flyway-mysql:10.17.0"
+	}
+}
+
 plugins {
 	id 'application'
 	id 'java'
-	id 'com.github.johnrengelman.shadow' version '7.1.2'
+	id 'com.github.johnrengelman.shadow' version '8.1.1'
+	id 'org.flywaydb.flyway' version '10.17.0'
 }
 
 repositories {
 	mavenCentral()
 	gradlePluginPortal()
+
+	maven {
+		url "https://download.red-gate.com/maven/release"
+	}
 }
 
 dependencies {
@@ -39,10 +54,6 @@ dependencies {
     testImplementation 'org.mockito:mockito-junit-jupiter:5.11.0'
 }
 
-test {
-	useJUnitPlatform()
-}
-
 application {
 	mainClass = 'net.server.Server'
 }
@@ -53,6 +64,22 @@ jar {
 	}
 }
 
+flyway {
+	url = System.getenv('DB_URL')
+	user = System.getenv('DB_USER')
+	password = System.getenv('DB_PASS')
+	cleanDisabled = false
+}
+
 build {
 	dependsOn shadowJar 
+}
+
+test {
+	useJUnitPlatform()
+}
+
+task runJar(type: Exec) {
+	dependsOn build
+	commandLine 'java', '-Xmx2048m', '-Dwz-path=wz', '-jar', 'build/libs/AshesMS-all.jar'
 }
