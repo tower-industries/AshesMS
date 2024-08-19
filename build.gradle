@@ -65,6 +65,7 @@ jar {
 }
 
 flyway {
+	locations = ['filesystem:database/migrations']
 	url = System.getenv('DB_URL')
 	user = System.getenv('DB_USER')
 	password = System.getenv('DB_PASS')
