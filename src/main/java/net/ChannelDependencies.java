@@ -1,7 +1,7 @@
 package net;
 
 import client.processor.npc.FredrickProcessor;
-import service.NoteService;
+import note.NoteService;
 
 import java.util.Objects;
 

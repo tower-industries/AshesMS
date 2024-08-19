@@ -1,8 +1,8 @@
 package net.packet.out;
 
-import model.Note;
 import net.opcodes.SendOpcode;
 import net.packet.ByteBufOutPacket;
+import note.Note;
 
 import java.util.List;
 import java.util.Objects;

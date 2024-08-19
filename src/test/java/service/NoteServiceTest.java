@@ -1,8 +1,8 @@
 package service;
 
-import database.note.NoteDao;
-import model.Note;
 import net.packet.out.ShowNotesPacket;
+import note.Note;
+import note.NoteDao;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;

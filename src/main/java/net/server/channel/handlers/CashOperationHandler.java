@@ -35,13 +35,13 @@ import constants.inventory.ItemConstants;
 import net.AbstractPacketHandler;
 import net.packet.InPacket;
 import net.server.Server;
+import note.NoteService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import server.CashShop;
 import server.CashShop.CashItem;
 import server.CashShop.CashItemFactory;
 import server.ItemInformationProvider;
-import service.NoteService;
 import tools.PacketCreator;
 import tools.Pair;
 

@@ -1,7 +1,7 @@
-package database.note;
+package note;
 
 import database.DaoException;
-import model.Note;
+import node.Note;
 import org.jdbi.v3.core.Handle;
 import org.jdbi.v3.core.JdbiException;
 import tools.DatabaseConnection;
