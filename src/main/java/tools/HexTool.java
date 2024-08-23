@@ -21,9 +21,9 @@
 */
 package tools;
 
-import constants.string.CharsetConstants;
-
+import java.nio.charset.StandardCharsets;
 import java.util.HexFormat;
+
 
 /**
  * Handles converting back and forth from byte arrays to hex strings.
@@ -80,7 +80,7 @@ public class HexTool {
             }
         }
 
-        return new String(filteredBytes, CharsetConstants.CHARSET);
+        return new String(filteredBytes, StandardCharsets.US_ASCII);
     }
 
     private static boolean isSpecialCharacter(byte asciiCode) {

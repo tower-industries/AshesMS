@@ -1,6 +1,5 @@
 package net.packet;
 
-import constants.string.CharsetConstants;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.ByteBufUtil;
 import io.netty.buffer.Unpooled;
@@ -8,6 +7,7 @@ import net.jcip.annotations.NotThreadSafe;
 import net.opcodes.SendOpcode;
 
 import java.awt.*;
+import java.nio.charset.StandardCharsets;
 
 @NotThreadSafe
 public class ByteBufOutPacket implements OutPacket {
@@ -71,14 +71,14 @@ public class ByteBufOutPacket implements OutPacket {
 
     @Override
     public void writeString(String value) {
-        byte[] bytes = value.getBytes(CharsetConstants.CHARSET);
+        byte[] bytes = value.getBytes(StandardCharsets.US_ASCII);
         writeShort(bytes.length);
         writeBytes(bytes);
     }
 
     @Override
     public void writeFixedString(String value) {
-        writeBytes(value.getBytes(CharsetConstants.CHARSET));
+        writeBytes(value.getBytes(StandardCharsets.US_ASCII));
     }
 
     @Override
