@@ -54,10 +54,6 @@ public class UnBanCommand extends Command {
             try (PreparedStatement p = con.prepareStatement("DELETE FROM ipbans WHERE aid = " + aid)) {
                 p.executeUpdate();
             }
-
-            try (PreparedStatement p = con.prepareStatement("DELETE FROM macbans WHERE aid = " + aid)) {
-                p.executeUpdate();
-            }
         } catch (Exception e) {
             e.printStackTrace();
             player.message("Failed to unban " + params[0]);

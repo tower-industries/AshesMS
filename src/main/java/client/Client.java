@@ -126,7 +126,6 @@ public class Client extends ChannelInboundHandlerAdapter {
     private int world;
     private volatile long lastPong;
     private int gmlevel;
-    private Set<String> macs = new HashSet<>();
     private Map<String, ScriptEngine> engines = new HashMap<>();
     private byte characterSlots = 3;
     private byte loginattempt = 0;
@@ -416,147 +415,6 @@ public class Client extends ChannelInboundHandlerAdapter {
         return difference < 86400 && difference > 0;
     }
 
-    public boolean hasBannedHWID() {
-        if (hwid == null) {
-            return false;
-        }
-
-        boolean ret = false;
-        try (Connection con = DatabaseConnection.getConnection();
-             PreparedStatement ps = con.prepareStatement("SELECT COUNT(*) FROM hwidbans WHERE hwid LIKE ?")) {
-            ps.setString(1, hwid.hwid());
-
-            try (ResultSet rs = ps.executeQuery()) {
-                if (rs != null && rs.next()) {
-                    if (rs.getInt(1) > 0) {
-                        ret = true;
-                    }
-                }
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        return ret;
-    }
-
-    public boolean hasBannedMac() {
-        if (macs.isEmpty()) {
-            return false;
-        }
-        boolean ret = false;
-        int i;
-        StringBuilder sql = new StringBuilder("SELECT COUNT(*) FROM macbans WHERE mac IN (");
-        for (i = 0; i < macs.size(); i++) {
-            sql.append("?");
-            if (i != macs.size() - 1) {
-                sql.append(", ");
-            }
-        }
-        sql.append(")");
-
-        try (Connection con = DatabaseConnection.getConnection();
-             PreparedStatement ps = con.prepareStatement(sql.toString())) {
-            i = 0;
-            for (String mac : macs) {
-                ps.setString(++i, mac);
-            }
-            try (ResultSet rs = ps.executeQuery()) {
-                rs.next();
-                if (rs.getInt(1) > 0) {
-                    ret = true;
-                }
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        return ret;
-    }
-
-    private void loadHWIDIfNescessary() throws SQLException {
-        if (hwid == null) {
-            try (Connection con = DatabaseConnection.getConnection();
-                 PreparedStatement ps = con.prepareStatement("SELECT hwid FROM accounts WHERE id = ?")) {
-                ps.setInt(1, accId);
-
-                try (ResultSet rs = ps.executeQuery()) {
-                    if (rs.next()) {
-                        hwid = new Hwid(rs.getString("hwid"));
-                    }
-                }
-            }
-        }
-    }
-
-    // TODO: Recode to close statements...
-    private void loadMacsIfNescessary() throws SQLException {
-        if (macs.isEmpty()) {
-            try (Connection con = DatabaseConnection.getConnection();
-                 PreparedStatement ps = con.prepareStatement("SELECT macs FROM accounts WHERE id = ?")) {
-                ps.setInt(1, accId);
-                try (ResultSet rs = ps.executeQuery()) {
-                    if (rs.next()) {
-                        for (String mac : rs.getString("macs").split(", ")) {
-                            if (!mac.equals("")) {
-                                macs.add(mac);
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    public void banHWID() {
-        try {
-            loadHWIDIfNescessary();
-
-            try (Connection con = DatabaseConnection.getConnection();
-                 PreparedStatement ps = con.prepareStatement("INSERT INTO hwidbans (hwid) VALUES (?)")) {
-                ps.setString(1, hwid.hwid());
-                ps.executeUpdate();
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void banMacs() {
-        try {
-            loadMacsIfNescessary();
-
-            List<String> filtered = new LinkedList<>();
-            try (Connection con = DatabaseConnection.getConnection()) {
-                try (PreparedStatement ps = con.prepareStatement("SELECT filter FROM macfilters");
-                     ResultSet rs = ps.executeQuery()) {
-                    while (rs.next()) {
-                        filtered.add(rs.getString("filter"));
-                    }
-                }
-
-                try (PreparedStatement ps = con.prepareStatement("INSERT INTO macbans (mac, aid) VALUES (?, ?)")) {
-                    for (String mac : macs) {
-                        boolean matched = false;
-                        for (String filter : filtered) {
-                            if (mac.matches(filter)) {
-                                matched = true;
-                                break;
-                            }
-                        }
-                        if (!matched) {
-                            ps.setString(1, mac);
-                            ps.setString(2, String.valueOf(getAccID()));
-                            ps.executeUpdate();
-                        }
-                    }
-                }
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
     public int finishLogin() {
         encoderLock.lock();
         try {
@@ -756,28 +614,6 @@ public class Client extends ChannelInboundHandlerAdapter {
         try (Connection con = DatabaseConnection.getConnection();
              PreparedStatement ps = con.prepareStatement("UPDATE accounts SET hwid = ? WHERE id = ?")) {
             ps.setString(1, hwid.hwid());
-            ps.setInt(2, accId);
-            ps.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void updateMacs(String macData) {
-        macs.addAll(Arrays.asList(macData.split(", ")));
-        StringBuilder newMacData = new StringBuilder();
-        Iterator<String> iter = macs.iterator();
-        while (iter.hasNext()) {
-            String cur = iter.next();
-            newMacData.append(cur);
-            if (iter.hasNext()) {
-                newMacData.append(", ");
-            }
-        }
-
-        try (Connection con = DatabaseConnection.getConnection();
-             PreparedStatement ps = con.prepareStatement("UPDATE accounts SET macs = ? WHERE id = ?")) {
-            ps.setString(1, newMacData.toString());
             ps.setInt(2, accId);
             ps.executeUpdate();
         } catch (SQLException e) {
@@ -1059,7 +895,6 @@ public class Client extends ChannelInboundHandlerAdapter {
         Server.getInstance().unregisterLoginState(this);
 
         this.accountName = null;
-        this.macs = null;
         this.hwid = null;
         this.birthday = null;
         this.engines = null;
@@ -1151,10 +986,6 @@ public class Client extends ChannelInboundHandlerAdapter {
                 e.printStackTrace();
             }
         }, SECONDS.toMillis(15));
-    }
-
-    public Set<String> getMacs() {
-        return Collections.unmodifiableSet(macs);
     }
 
     public int getGMLevel() {

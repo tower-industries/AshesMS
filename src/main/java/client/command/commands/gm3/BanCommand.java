@@ -68,8 +68,7 @@ public class BanCommand extends Command {
                 c.getPlayer().message("Error occured while banning IP address");
                 c.getPlayer().message(target.getName() + "'s IP was not banned: " + ip);
             }
-            target.getClient().banMacs();
-            reason = c.getPlayer().getName() + " banned " + readableTargetName + " for " + reason + " (IP: " + ip + ") " + "(MAC: " + c.getMacs() + ")";
+            reason = c.getPlayer().getName() + " banned " + readableTargetName + " for " + reason + " (IP: " + ip + ")";
             target.ban(reason);
             target.yellowMessage("You have been banned by #b" + c.getPlayer().getName() + " #k.");
             target.yellowMessage("Reason: " + reason);

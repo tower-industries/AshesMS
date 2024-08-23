@@ -111,7 +111,7 @@ public final class LoginPasswordHandler implements PacketHandler {
             }
         }
 
-        if (c.hasBannedIP() || c.hasBannedMac()) {
+        if (c.hasBannedIP()) {
             c.sendPacket(PacketCreator.getLoginFailed(3));
             return;
         }

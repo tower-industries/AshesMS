@@ -53,7 +53,7 @@ public final class CharSelectedHandler extends AbstractPacketHandler {
     public final void handlePacket(InPacket p, Client c) {
         int charId = p.readInt();
 
-        String macs = p.readString();
+        p.readString(); // read mac, but don't do anything with it
         String hostString = p.readString();
 
         final Hwid hwid;
@@ -65,17 +65,11 @@ public final class CharSelectedHandler extends AbstractPacketHandler {
             return;
         }
 
-        c.updateMacs(macs);
         c.updateHwid(hwid);
 
         AntiMulticlientResult res = SessionCoordinator.getInstance().attemptGameSession(c, c.getAccID(), hwid);
         if (res != AntiMulticlientResult.SUCCESS) {
             c.sendPacket(PacketCreator.getAfterLoginError(parseAntiMulticlientError(res)));
-            return;
-        }
-
-        if (c.hasBannedMac() || c.hasBannedHWID()) {
-            SessionCoordinator.getInstance().closeSession(c, true);
             return;
         }
 

@@ -35,7 +35,7 @@ public final class ViewAllCharRegisterPicHandler extends AbstractPacketHandler {
         int charId = p.readInt();
         p.readInt(); // please don't let the client choose which world they should login
 
-        String mac = p.readString();
+        p.readString(); // read mac, but don't do anything with it
         String hostString = p.readString();
 
         final Hwid hwid;
@@ -47,13 +47,7 @@ public final class ViewAllCharRegisterPicHandler extends AbstractPacketHandler {
             return;
         }
 
-        c.updateMacs(mac);
         c.updateHwid(hwid);
-
-        if (c.hasBannedMac() || c.hasBannedHWID()) {
-            SessionCoordinator.getInstance().closeSession(c, true);
-            return;
-        }
 
         AntiMulticlientResult res = SessionCoordinator.getInstance().attemptGameSession(c, c.getAccID(), hwid);
         if (res != AntiMulticlientResult.SUCCESS) {

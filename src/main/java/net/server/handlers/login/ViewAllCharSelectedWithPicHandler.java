@@ -36,7 +36,7 @@ public class ViewAllCharSelectedWithPicHandler extends AbstractPacketHandler {
         int charId = p.readInt();
         p.readInt(); // please don't let the client choose which world they should login
 
-        String macs = p.readString();
+        p.readString(); // read mac, but don't do anything with it
         String hostString = p.readString();
 
         final Hwid hwid;
@@ -48,13 +48,7 @@ public class ViewAllCharSelectedWithPicHandler extends AbstractPacketHandler {
             return;
         }
 
-        c.updateMacs(macs);
         c.updateHwid(hwid);
-
-        if (c.hasBannedMac() || c.hasBannedHWID()) {
-            SessionCoordinator.getInstance().closeSession(c, true);
-            return;
-        }
 
         Server server = Server.getInstance();
         if (!server.haveCharacterEntry(c.getAccID(), charId)) {

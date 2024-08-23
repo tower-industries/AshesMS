@@ -33,7 +33,7 @@ public class CharSelectedWithPicHandler extends AbstractPacketHandler {
         String pic = p.readString();
         int charId = p.readInt();
 
-        String macs = p.readString();
+		p.readString(); // read mac, but don't do anything with it
         String hostString = p.readString();
 
         final Hwid hwid;
@@ -45,13 +45,7 @@ public class CharSelectedWithPicHandler extends AbstractPacketHandler {
             return;
         }
 
-        c.updateMacs(macs);
         c.updateHwid(hwid);
-
-        if (c.hasBannedMac() || c.hasBannedHWID()) {
-            SessionCoordinator.getInstance().closeSession(c, true);
-            return;
-        }
 
         Server server = Server.getInstance();
         if (!server.haveCharacterEntry(c.getAccID(), charId)) {
