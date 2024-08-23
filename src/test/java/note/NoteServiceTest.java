@@ -1,7 +1,5 @@
-package service;
+package note;
 
-import database.note.NoteDao;
-import model.Note;
 import net.packet.out.ShowNotesPacket;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

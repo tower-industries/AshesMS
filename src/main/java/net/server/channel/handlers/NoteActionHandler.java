@@ -22,12 +22,12 @@
 package net.server.channel.handlers;
 
 import client.Client;
-import model.Note;
 import net.AbstractPacketHandler;
 import net.packet.InPacket;
+import note.Note;
+import note.NoteService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import service.NoteService;
 import tools.PacketCreator;
 
 import java.util.Optional;

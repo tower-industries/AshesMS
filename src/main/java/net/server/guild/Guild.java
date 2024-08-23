@@ -32,9 +32,9 @@ import net.server.coordinator.matchchecker.MatchCheckerCoordinator;
 import net.server.coordinator.world.InviteCoordinator;
 import net.server.coordinator.world.InviteCoordinator.InviteResult;
 import net.server.coordinator.world.InviteCoordinator.InviteType;
+import note.NoteService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import service.NoteService;
 import tools.DatabaseConnection;
 import tools.PacketCreator;
 

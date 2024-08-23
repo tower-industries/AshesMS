@@ -52,6 +52,7 @@ import net.AbstractPacketHandler;
 import net.packet.InPacket;
 import net.packet.out.SendNoteSuccessPacket;
 import net.server.Server;
+import note.NoteService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import server.ItemInformationProvider;
@@ -64,7 +65,6 @@ import server.maps.Kite;
 import server.maps.MapleMap;
 import server.maps.MapleTVEffect;
 import server.maps.PlayerShopItem;
-import service.NoteService;
 import tools.PacketCreator;
 import tools.Pair;
 

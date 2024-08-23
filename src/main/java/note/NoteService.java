@@ -1,11 +1,11 @@
-package service;
+package note;
 
 import client.Character;
 import database.DaoException;
-import database.note.NoteDao;
-import model.Note;
 import net.packet.out.ShowNotesPacket;
 import net.server.Server;
+import note.Note;
+import note.NoteDao;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
