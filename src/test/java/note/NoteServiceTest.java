@@ -1,4 +1,4 @@
-package service;
+package note;
 
 import net.packet.out.ShowNotesPacket;
 import note.Note;
