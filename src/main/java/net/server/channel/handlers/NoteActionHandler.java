@@ -24,7 +24,7 @@ package net.server.channel.handlers;
 import client.Client;
 import net.AbstractPacketHandler;
 import net.packet.InPacket;
-import node.Note;
+import note.Note;
 import note.NoteService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
