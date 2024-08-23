@@ -15,7 +15,6 @@ CREATE TABLE IF NOT EXISTS `accounts` (
   `birthday` date NOT NULL DEFAULT '2005-05-11',
   `banned` tinyint(1) NOT NULL DEFAULT '0',
   `banreason` text,
-  `macs` tinytext,
   `nxCredit` int(11) DEFAULT NULL,
   `maplePoint` int(11) DEFAULT NULL,
   `nxPrepaid` int(11) DEFAULT NULL,
@@ -12909,13 +12908,6 @@ CREATE TABLE IF NOT EXISTS `hwidaccounts` (
   PRIMARY KEY (`accountid`,`hwid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
-CREATE TABLE IF NOT EXISTS `hwidbans` (
-  `hwidbanid` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `hwid` varchar(30) NOT NULL,
-  PRIMARY KEY (`hwidbanid`),
-  UNIQUE KEY `hwid_2` (`hwid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
 CREATE TABLE IF NOT EXISTS `inventoryequipment` (
   `inventoryequipmentid` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `inventoryitemid` int(10) unsigned NOT NULL DEFAULT '0',
@@ -12986,20 +12978,6 @@ CREATE TABLE IF NOT EXISTS `keymap` (
   `type` int(11) NOT NULL DEFAULT '0',
   `action` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
-CREATE TABLE IF NOT EXISTS `macbans` (
-  `macbanid` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `mac` varchar(30) NOT NULL,
-  `aid` varchar(40) DEFAULT NULL,
-  PRIMARY KEY (`macbanid`),
-  UNIQUE KEY `mac_2` (`mac`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
-CREATE TABLE IF NOT EXISTS `macfilters` (
-  `macfilterid` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `filter` varchar(30) NOT NULL,
-  PRIMARY KEY (`macfilterid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 CREATE TABLE IF NOT EXISTS `makercreatedata` (
