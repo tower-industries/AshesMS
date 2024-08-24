@@ -31,7 +31,6 @@ import constants.game.GameConstants;
 import constants.id.MapId;
 import constants.id.NpcId;
 import constants.inventory.ItemConstants;
-import constants.string.LanguageConstants;
 import net.server.Server;
 import net.server.channel.Channel;
 import net.server.coordinator.matchchecker.MatchCheckerListenerFactory.MatchCheckerType;
@@ -622,7 +621,7 @@ public class NPCConversationManager extends AbstractPlayerInteraction {
     }
 
     public boolean sendCPQMapLists() {
-        String msg = LanguageConstants.getMessage(getPlayer(), LanguageConstants.CPQPickRoom);
+		String msg = "Sign up for the Monster Festival!\r\n";
         int msgLen = msg.length();
         for (int i = 0; i < 6; i++) {
             if (fieldTaken(i)) {
@@ -678,7 +677,7 @@ public class NPCConversationManager extends AbstractPlayerInteraction {
                 if (mc != null) {
                     mc.setChallenged(false);
                     mc.changeMap(map, map.getPortal(0));
-                    mc.sendPacket(PacketCreator.serverNotice(6, LanguageConstants.getMessage(mc, LanguageConstants.CPQEntryLobby)));
+                    mc.sendPacket(PacketCreator.serverNotice(6, "You will now receive challenges from other groups. If you do not accept a challenge within 3 minutes, you will be taken out."));
                     TimerManager tMan = TimerManager.getInstance();
                     tMan.schedule(() -> mapClock((int) MINUTES.toSeconds(3)), 1500);
 
@@ -865,7 +864,7 @@ public class NPCConversationManager extends AbstractPlayerInteraction {
     }
 
     public boolean sendCPQMapLists2() {
-        String msg = LanguageConstants.getMessage(getPlayer(), LanguageConstants.CPQPickRoom);
+		String msg = "Sign up for the Monster Festival!\r\n";
         int msgLen = msg.length();
         for (int i = 0; i < 3; i++) {
             if (fieldTaken2(i)) {
@@ -921,7 +920,7 @@ public class NPCConversationManager extends AbstractPlayerInteraction {
                 if (mc != null) {
                     mc.setChallenged(false);
                     mc.changeMap(map, map.getPortal(0));
-                    mc.sendPacket(PacketCreator.serverNotice(6, LanguageConstants.getMessage(mc, LanguageConstants.CPQEntryLobby)));
+                    mc.sendPacket(PacketCreator.serverNotice(6, "You will now receive challenges from other groups. If you do not accept a challenge within 3 minutes, you will be taken out."));
                     TimerManager tMan = TimerManager.getInstance();
                     tMan.schedule(() -> mapClock((int) MINUTES.toSeconds(3)), 1500);
 
@@ -955,7 +954,7 @@ public class NPCConversationManager extends AbstractPlayerInteraction {
         for (MapObject mmo : map.getAllPlayer()) {
             Character mc = (Character) mmo;
             if (mc.getParty() == null) {
-                sendOk(LanguageConstants.getMessage(mc, LanguageConstants.CPQFindError));
+                sendOk("We could not find a group in this room.\r\nProbably the group was scrapped inside the room!");
                 return;
             }
             if (mc.getParty().getLeader().getId() == mc.getId()) {
@@ -966,13 +965,13 @@ public class NPCConversationManager extends AbstractPlayerInteraction {
         if (leader != null) {
             if (!leader.isChallenged()) {
                 if (!sendCPQChallenge("cpq2", leader.getId())) {
-                    sendOk(LanguageConstants.getMessage(leader, LanguageConstants.CPQChallengeRoomAnswer));
+                    sendOk("The group is currently facing a challenge.");
                 }
             } else {
-                sendOk(LanguageConstants.getMessage(leader, LanguageConstants.CPQChallengeRoomAnswer));
+                sendOk("The group is currently facing a challenge.");
             }
         } else {
-            sendOk(LanguageConstants.getMessage(leader, LanguageConstants.CPQLeaderNotFound));
+            sendOk("Could not find the leader.");
         }
     }
 
@@ -986,7 +985,7 @@ public class NPCConversationManager extends AbstractPlayerInteraction {
         for (MapObject mmo : map.getAllPlayer()) {
             Character mc = (Character) mmo;
             if (mc.getParty() == null) {
-                sendOk(LanguageConstants.getMessage(mc, LanguageConstants.CPQFindError));
+                sendOk("We could not find a group in this room.\r\nProbably the group was scrapped inside the room!");
                 return;
             }
             if (mc.getParty().getLeader().getId() == mc.getId()) {
@@ -995,15 +994,16 @@ public class NPCConversationManager extends AbstractPlayerInteraction {
             }
         }
         if (leader != null) {
+			String CHALLENGE_MSG = "The group is currently facing a challenge.";
             if (!leader.isChallenged()) {
                 if (!sendCPQChallenge("cpq1", leader.getId())) {
-                    sendOk(LanguageConstants.getMessage(leader, LanguageConstants.CPQChallengeRoomAnswer));
+                    sendOk(CHALLENGE_MSG);
                 }
             } else {
-                sendOk(LanguageConstants.getMessage(leader, LanguageConstants.CPQChallengeRoomAnswer));
+				sendOk(CHALLENGE_MSG);
             }
         } else {
-            sendOk(LanguageConstants.getMessage(leader, LanguageConstants.CPQLeaderNotFound));
+            sendOk("Could not find the leader.");
         }
     }
 

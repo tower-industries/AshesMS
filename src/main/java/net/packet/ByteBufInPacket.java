@@ -1,10 +1,10 @@
 package net.packet;
 
-import constants.string.CharsetConstants;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.ByteBufUtil;
 
 import java.awt.*;
+import java.nio.charset.StandardCharsets;
 
 public class ByteBufInPacket implements InPacket {
     private final ByteBuf byteBuf;
@@ -52,7 +52,7 @@ public class ByteBufInPacket implements InPacket {
         short length = readShort();
         byte[] stringBytes = new byte[length];
         byteBuf.readBytes(stringBytes);
-        return new String(stringBytes, CharsetConstants.CHARSET);
+        return new String(stringBytes, StandardCharsets.US_ASCII);
     }
 
     @Override

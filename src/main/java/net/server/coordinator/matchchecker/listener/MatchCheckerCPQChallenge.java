@@ -20,7 +20,6 @@
 package net.server.coordinator.matchchecker.listener;
 
 import client.Character;
-import constants.string.LanguageConstants;
 import net.server.coordinator.matchchecker.AbstractMatchCheckerListener;
 import net.server.coordinator.matchchecker.MatchCheckerListenerRecipe;
 import net.server.world.PartyCharacter;
@@ -82,7 +81,7 @@ public class MatchCheckerCPQChallenge implements MatchCheckerListenerRecipe {
                     NPCScriptManager.getInstance().start("cpqchallenge2", ldr.getClient(), npcid, chrMembers);
                 }
 
-                cm.sendOk(LanguageConstants.getMessage(chr, LanguageConstants.CPQChallengeRoomSent));
+                cm.sendOk("A challenge has been sent to the group in the room. Please wait a while.");
             }
 
             @Override
@@ -111,7 +110,7 @@ public class MatchCheckerCPQChallenge implements MatchCheckerListenerRecipe {
             @Override
             public void onMatchDeclined(int leaderid, Set<Character> matchPlayers, String message) {
                 Character chr = getChallenger(leaderid, matchPlayers);
-                chr.dropMessage(5, LanguageConstants.getMessage(chr, LanguageConstants.CPQChallengeRoomDenied));
+                chr.dropMessage(5, "The group in the room has canceled your challenge");
             }
 
             @Override

@@ -1,6 +1,5 @@
 package net.packet;
 
-import constants.string.CharsetConstants;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import net.opcodes.SendOpcode;
@@ -8,6 +7,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.awt.*;
+import java.nio.charset.StandardCharsets;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -113,7 +113,7 @@ class ByteBufInPacketTest {
     void readString() {
         final String writtenString = "You have gained experience (+3200)";
         byteBuf.writeShortLE(writtenString.length());
-        byte[] writtenStringBytes = writtenString.getBytes(CharsetConstants.CHARSET);
+        byte[] writtenStringBytes = writtenString.getBytes(StandardCharsets.US_ASCII);
         byteBuf.writeBytes(writtenStringBytes);
 
         String readString = inPacket.readString();
