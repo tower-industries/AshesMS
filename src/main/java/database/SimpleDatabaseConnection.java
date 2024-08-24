@@ -7,10 +7,8 @@ import org.apache.logging.log4j.core.config.Configurator;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-final class SimpleDatabaseConnection {
-    private SimpleDatabaseConnection() {}
-
-    static Connection getConnection() {
+public final class SimpleDatabaseConnection {
+    public static Connection getConnection() {
         muffleLogging();
         DatabaseConnection.initializeConnectionPool();
 
