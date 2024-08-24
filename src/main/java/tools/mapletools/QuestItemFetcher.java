@@ -1,6 +1,7 @@
 package tools.mapletools;
 
 import database.DatabaseConnection;
+import database.SimpleDatabaseConnection;
 import provider.wz.WZFiles;
 import server.ItemInformationProvider;
 import tools.Pair;

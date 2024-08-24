@@ -19,7 +19,8 @@
 */
 package tools.mapletools;
 
-import server.life.MonsterStats;
+import database.SimpleDatabaseConnection;
+iSimpleDatabaseConnecitonmport server.life.MonsterStats;
 import tools.Pair;
 
 import java.io.PrintWriter;

@@ -1,5 +1,7 @@
 package tools.mapletools;
 
+import database.SimpleDatabaseConnection;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.nio.file.DirectoryStream;
