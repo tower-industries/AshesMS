@@ -67,7 +67,6 @@ import net.server.channel.handlers.FamilySummonResponseHandler;
 import net.server.channel.handlers.FamilyUseHandler;
 import net.server.channel.handlers.FieldDamageMobHandler;
 import net.server.channel.handlers.FredrickHandler;
-import net.server.channel.handlers.GeneralChatHandler;
 import net.server.channel.handlers.GiveFameHandler;
 import net.server.channel.handlers.GrenadeEffectHandler;
 import net.server.channel.handlers.GuildOperationHandler;
@@ -305,7 +304,6 @@ public final class PacketProcessor {
         registerHandler(RecvOpcode.WORLD_TRANSFER, new TransferWorldHandler());
         registerHandler(RecvOpcode.CHANGE_CHANNEL, new ChangeChannelHandler());
         registerHandler(RecvOpcode.STRANGE_DATA, LoginRequiringNoOpHandler.getInstance());
-        registerHandler(RecvOpcode.GENERAL_CHAT, new GeneralChatHandler());
         registerHandler(RecvOpcode.WHISPER, new WhisperHandler());
         registerHandler(RecvOpcode.NPC_TALK, new NPCTalkHandler());
         registerHandler(RecvOpcode.NPC_TALK_MORE, new NPCMoreTalkHandler());

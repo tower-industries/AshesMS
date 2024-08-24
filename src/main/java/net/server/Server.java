@@ -25,7 +25,6 @@ import client.Character;
 import client.Client;
 import client.Family;
 import client.SkillFactory;
-import client.command.CommandsExecutor;
 import client.inventory.Item;
 import client.inventory.ItemFactory;
 import client.inventory.manipulator.CashIdGenerator;
@@ -939,7 +938,6 @@ public class Server {
         log.info("Ashes is now online after {} ms.", initDuration.toMillis());
 
         OpcodeConstants.generateOpcodeNames();
-        CommandsExecutor.getInstance();
 
         for (Channel ch : this.getAllChannels()) {
             ch.reloadEventScriptManager();
