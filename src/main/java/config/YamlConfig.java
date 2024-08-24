@@ -19,7 +19,7 @@ public class YamlConfig {
 
     private static YamlConfig loadConfig() {
         try {
-            YamlReader reader = new YamlReader(Files.newBufferedReader(Path.of(CONFIG_FILE_NAME), StandardCharset.US_ASCII));
+            YamlReader reader = new YamlReader(Files.newBufferedReader(Path.of(CONFIG_FILE_NAME), StandardCharsets.US_ASCII));
             YamlConfig config = reader.read(YamlConfig.class);
             reader.close();
             return config;
