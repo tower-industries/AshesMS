@@ -4,13 +4,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ServerConfig {
-
-    //Database Configuration
-    public String DB_URL;
-    public String DB_USER;
-    public String DB_PASS;
-    public int INIT_CONNECTION_POOL_TIMEOUT;
-
     //Login Configuration
     public int WORLDS;
     public int WLDLIST_SIZE;

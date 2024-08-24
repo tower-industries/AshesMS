@@ -46,12 +46,11 @@ public class DatabaseConnection {
 	private static HikariConfig getConfig() {
         HikariConfig config = new HikariConfig();
 
-        config.setJdbcUrl(YamlConfig.config.server.DB_URL);
-        config.setUsername(YamlConfig.config.server.DB_USER);
+        config.setJdbcUrl(System.getenv("DB_URL"));
+        config.setUsername(System.getenv("DB_USER");
         config.setPassword(System.getenv("DB_PASS"));
 
-        final int initFailTimeoutSeconds = YamlConfig.config.server.INIT_CONNECTION_POOL_TIMEOUT;
-        config.setInitializationFailTimeout(SECONDS.toMillis(initFailTimeoutSeconds));
+        config.setInitializationFailTimeout(SECONDS.toMillis(90));
         config.setConnectionTimeout(SECONDS.toMillis(30)); // Hikari default
         config.setMaximumPoolSize(10); // Hikari default
 
