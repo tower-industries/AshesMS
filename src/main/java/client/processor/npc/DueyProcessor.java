@@ -35,13 +35,13 @@ import client.inventory.manipulator.KarmaManipulator;
 import config.YamlConfig;
 import constants.id.ItemId;
 import constants.inventory.ItemConstants;
+import database.DatabaseConnection;
 import net.server.channel.Channel;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import server.DueyPackage;
 import server.ItemInformationProvider;
 import server.Trade;
-import tools.DatabaseConnection;
 import tools.PacketCreator;
 import tools.Pair;
 

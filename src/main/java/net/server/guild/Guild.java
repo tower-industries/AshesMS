@@ -24,6 +24,7 @@ package net.server.guild;
 import client.Character;
 import client.Client;
 import config.YamlConfig;
+import database.DatabaseConnection;
 import net.packet.Packet;
 import net.server.PlayerStorage;
 import net.server.Server;
@@ -35,7 +36,6 @@ import net.server.coordinator.world.InviteCoordinator.InviteType;
 import note.NoteService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import tools.DatabaseConnection;
 import tools.PacketCreator;
 
 import java.sql.Connection;

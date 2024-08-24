@@ -23,6 +23,7 @@ import client.inventory.InventoryType;
 import client.inventory.Item;
 import client.inventory.ItemFactory;
 import constants.game.GameConstants;
+import database.DatabaseConnection;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import provider.Data;
@@ -30,7 +31,6 @@ import provider.DataProvider;
 import provider.DataProviderFactory;
 import provider.DataTool;
 import provider.wz.WZFiles;
-import tools.DatabaseConnection;
 import tools.PacketCreator;
 import tools.Pair;
 

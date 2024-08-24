@@ -28,10 +28,10 @@ import client.BuddylistEntry;
 import client.Character;
 import client.CharacterNameAndId;
 import client.Client;
+import database.DatabaseConnection;
 import net.AbstractPacketHandler;
 import net.packet.InPacket;
 import net.server.world.World;
-import tools.DatabaseConnection;
 import tools.PacketCreator;
 
 import java.sql.Connection;

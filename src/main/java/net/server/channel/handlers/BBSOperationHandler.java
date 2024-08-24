@@ -23,12 +23,12 @@ package net.server.channel.handlers;
 
 import client.Character;
 import client.Client;
+import database.DatabaseConnection;
 import net.AbstractPacketHandler;
 import net.packet.InPacket;
 import net.server.guild.GuildPackets;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import tools.DatabaseConnection;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

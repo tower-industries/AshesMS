@@ -24,11 +24,11 @@ package client.inventory;
 import client.Character;
 import client.inventory.manipulator.CashIdGenerator;
 import constants.game.ExpTable;
+import database.DatabaseConnection;
 import server.ItemInformationProvider;
 import server.movement.AbsoluteLifeMovement;
 import server.movement.LifeMovement;
 import server.movement.LifeMovementFragment;
-import tools.DatabaseConnection;
 import tools.PacketCreator;
 import tools.Pair;
 

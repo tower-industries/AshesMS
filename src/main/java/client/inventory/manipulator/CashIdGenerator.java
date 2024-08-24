@@ -19,9 +19,9 @@
 */
 package client.inventory.manipulator;
 
+import databse.DatabaseConnection;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import tools.DatabaseConnection;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

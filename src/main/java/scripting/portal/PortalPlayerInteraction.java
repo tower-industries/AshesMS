@@ -22,10 +22,10 @@
 package scripting.portal;
 
 import client.Client;
+import database.DatabaseConnection;
 import scripting.AbstractPlayerInteraction;
 import scripting.map.MapScriptManager;
 import server.maps.Portal;
-import tools.DatabaseConnection;
 import tools.PacketCreator;
 
 import java.sql.Connection;

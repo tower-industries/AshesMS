@@ -22,6 +22,7 @@
 package server.maps;
 
 import constants.id.MapId;
+import database.DatabaseConnection;
 import provider.Data;
 import provider.DataProvider;
 import provider.DataProviderFactory;
@@ -33,7 +34,6 @@ import server.life.LifeFactory;
 import server.life.Monster;
 import server.life.PlayerNPC;
 import server.partyquest.GuardianSpawnPoint;
-import tools.DatabaseConnection;
 import tools.StringUtil;
 
 import java.awt.*;

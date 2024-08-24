@@ -23,11 +23,11 @@ import client.Character;
 import client.Client;
 import config.YamlConfig;
 import constants.id.NpcId;
+import database.DatabaseConnection;
 import net.server.Server;
 import net.server.coordinator.login.LoginStorage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import tools.DatabaseConnection;
 
 import java.sql.Connection;
 import java.sql.SQLException;

@@ -28,9 +28,9 @@ import client.inventory.Pet;
 import client.inventory.manipulator.InventoryManipulator;
 import constants.id.ItemId;
 import constants.inventory.ItemConstants;
+import database.DatabaseConnection;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import tools.DatabaseConnection;
 import tools.PacketCreator;
 
 import java.sql.Connection;

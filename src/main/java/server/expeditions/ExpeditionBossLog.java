@@ -20,7 +20,7 @@
 package server.expeditions;
 
 import config.YamlConfig;
-import tools.DatabaseConnection;
+import database.DatabaseConnection;
 import tools.Pair;
 
 import java.sql.Connection;

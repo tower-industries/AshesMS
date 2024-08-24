@@ -1,10 +1,10 @@
 package net.server.task;
 
 import client.Family;
+import database.DatabaseConnection;
 import net.server.world.World;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import tools.DatabaseConnection;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

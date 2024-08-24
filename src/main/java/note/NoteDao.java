@@ -1,10 +1,10 @@
 package note;
 
 import database.DaoException;
+import database.DatabaseConnection;
 import note.Note;
 import org.jdbi.v3.core.Handle;
 import org.jdbi.v3.core.JdbiException;
-import tools.DatabaseConnection;
 
 import java.util.List;
 import java.util.Optional;

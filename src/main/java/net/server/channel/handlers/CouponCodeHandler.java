@@ -27,6 +27,7 @@ import client.Character;
 import client.Client;
 import client.inventory.Item;
 import client.inventory.manipulator.InventoryManipulator;
+import database.DatabaseConnection;
 import net.AbstractPacketHandler;
 import net.packet.InPacket;
 import net.server.Server;
@@ -34,7 +35,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import server.CashShop;
 import server.ItemInformationProvider;
-import tools.DatabaseConnection;
 import tools.PacketCreator;
 import tools.Pair;
 

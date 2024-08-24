@@ -23,6 +23,7 @@ package net.server.guild;
 
 import client.Character;
 import client.Client;
+import database.DatabaseConnection;
 import net.packet.Packet;
 import net.server.Server;
 import net.server.coordinator.world.InviteCoordinator;
@@ -30,7 +31,6 @@ import net.server.coordinator.world.InviteCoordinator.InviteResult;
 import net.server.coordinator.world.InviteCoordinator.InviteType;
 import net.server.world.Party;
 import net.server.world.PartyCharacter;
-import tools.DatabaseConnection;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

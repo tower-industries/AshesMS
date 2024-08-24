@@ -26,6 +26,7 @@ import client.Client;
 import client.Family;
 import client.FamilyEntry;
 import config.YamlConfig;
+import database.DatabaseConnection;
 import net.AbstractPacketHandler;
 import net.packet.InPacket;
 import net.server.coordinator.world.InviteCoordinator;
@@ -34,7 +35,6 @@ import net.server.coordinator.world.InviteCoordinator.InviteResultType;
 import net.server.coordinator.world.InviteCoordinator.InviteType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import tools.DatabaseConnection;
 import tools.PacketCreator;
 
 import java.sql.Connection;

@@ -30,6 +30,7 @@ import client.inventory.InventoryType;
 import client.inventory.Item;
 import client.inventory.ItemFactory;
 import client.inventory.manipulator.InventoryManipulator;
+import database.DatabaseConnection;
 import net.server.Server;
 import net.server.world.World;
 import note.NoteService;
@@ -37,7 +38,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import server.ItemInformationProvider;
 import server.maps.HiredMerchant;
-import tools.DatabaseConnection;
 import tools.PacketCreator;
 import tools.Pair;
 

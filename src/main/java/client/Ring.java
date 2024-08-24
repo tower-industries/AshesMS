@@ -22,7 +22,7 @@
 package client;
 
 import client.inventory.manipulator.CashIdGenerator;
-import tools.DatabaseConnection;
+import database.DatabaseConnection;
 import tools.Pair;
 
 import java.sql.Connection;

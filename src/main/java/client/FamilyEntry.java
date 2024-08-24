@@ -19,11 +19,11 @@
 */
 package client;
 
+import database.DatabaseConnection;
 import net.packet.Packet;
 import net.server.Server;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import tools.DatabaseConnection;
 import tools.PacketCreator;
 import tools.Pair;
 
