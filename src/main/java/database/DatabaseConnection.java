@@ -47,7 +47,7 @@ public class DatabaseConnection {
         HikariConfig config = new HikariConfig();
 
         config.setJdbcUrl(System.getenv("DB_URL"));
-        config.setUsername(System.getenv("DB_USER");
+        config.setUsername(System.getenv("DB_USER"));
         config.setPassword(System.getenv("DB_PASS"));
 
         config.setInitializationFailTimeout(SECONDS.toMillis(90));
