@@ -1,6 +1,5 @@
 package config;
 
-import database.DatabaseConfig;
 import com.esotericsoftware.yamlbeans.YamlReader;
 
 import java.io.FileNotFoundException;
@@ -17,7 +16,6 @@ public class YamlConfig {
 
     public List<WorldConfig> worlds;
     public ServerConfig server;
-	public DatabaseConfig database;
 
     private static YamlConfig loadConfig() {
         try {
