@@ -54,7 +54,7 @@ public class MonsterCarnival {
                 bluePortal = 1;
             }
 
-			String CPQ_ENTRY_MESSAGE = "You can select \"Summon Monseters\", \"Ability\", or \"Protector as your during the Monster Carnival. Use Tab and F1 ~ F12 for quick access!"
+			String CPQ_ENTRY_MESSAGE = "You can select \"Summon Monseters\", \"Ability\", or \"Protector as your during the Monster Carnival. Use Tab and F1 ~ F12 for quick access!";
 
             for (PartyCharacter mpc : p1.getMembers()) {
                 Character mc = mpc.getPlayer();
@@ -90,7 +90,7 @@ public class MonsterCarnival {
                 }
             }
 
-			String CPQ_ERROR_MESSAGE = "There was a problem. Please re-create a room."
+			String CPQ_ERROR_MESSAGE = "There was a problem. Please re-create a room.";
             if (team1 == null || team2 == null) {
                 for (PartyCharacter mpc : p1.getMembers()) {
                     Character chr = mpc.getPlayer();

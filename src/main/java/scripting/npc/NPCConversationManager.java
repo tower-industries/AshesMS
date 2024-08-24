@@ -621,7 +621,7 @@ public class NPCConversationManager extends AbstractPlayerInteraction {
     }
 
     public boolean sendCPQMapLists() {
-		String msg = "Sign up for the Monster Festival!\r\n"
+		String msg = "Sign up for the Monster Festival!\r\n";
         int msgLen = msg.length();
         for (int i = 0; i < 6; i++) {
             if (fieldTaken(i)) {
@@ -994,7 +994,7 @@ public class NPCConversationManager extends AbstractPlayerInteraction {
             }
         }
         if (leader != null) {
-			String CHALLENGE_MSG = "The group is currently facing a challenge".
+			String CHALLENGE_MSG = "The group is currently facing a challenge.";
             if (!leader.isChallenged()) {
                 if (!sendCPQChallenge("cpq1", leader.getId())) {
                     sendOk(CHALLENGE_MSG);
