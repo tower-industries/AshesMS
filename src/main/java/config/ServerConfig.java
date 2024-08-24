@@ -100,7 +100,6 @@ public class ServerConfig {
     public boolean USE_ENABLE_FULL_RESPAWN;
     public boolean USE_ENABLE_CHAT_LOG;
     public boolean USE_MAP_OWNERSHIP_SYSTEM;
-    public boolean USE_FISHING_SYSTEM;
     public boolean USE_NPCS_SCRIPTABLE;
 
     //Events/PQs Configuration

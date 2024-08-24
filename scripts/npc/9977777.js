@@ -216,8 +216,6 @@ function writeFeatureTab_Serverpotentials() {
     addFeature("Poison damage value visible for other players.");
     addFeature("M. book announcer displays info based on demand.");
     addFeature("Custom jail system.");
-    addFeature("Custom fishing system having 'seasonal' catch times.");
-    addFeature("Actual fishing handling w/ F. Net - thanks Dragohe4rt!");
     addFeature("Custom map leasing system.");
     addFeature("Delete Character.");
     addFeature("Smooth view-all-char, now showing all account chars.");

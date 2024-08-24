@@ -235,15 +235,6 @@ public class MapId {
         return mapId >= NETTS_PYRAMID_MIN && mapId <= NETTS_PYRAMID_MAX;
     }
 
-    // Fishing
-    private static final int ON_THE_WAY_TO_THE_HARBOR = 120010000;
-    private static final int PIER_ON_THE_BEACH = 251000100;
-    private static final int PEACEFUL_SHIP = 541010110;
-
-    public static boolean isFishingArea(int mapId) {
-        return mapId == ON_THE_WAY_TO_THE_HARBOR || mapId == PIER_ON_THE_BEACH || mapId == PEACEFUL_SHIP;
-    }
-
     // Wedding
     public static final int AMORIA = 680000000;
     public static final int CHAPEL_WEDDING_ALTAR = 680000110;

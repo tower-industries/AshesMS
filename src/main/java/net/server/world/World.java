@@ -49,7 +49,6 @@ import net.server.services.type.WorldServices;
 import net.server.task.CharacterAutosaverTask;
 import net.server.task.CharacterHpDecreaseTask;
 import net.server.task.FamilyDailyResetTask;
-import net.server.task.FishingTask;
 import net.server.task.HiredMerchantTask;
 import net.server.task.MapOwnershipTask;
 import net.server.task.MountTirednessTask;
@@ -74,7 +73,6 @@ import server.maps.PlayerShopItem;
 import tools.DatabaseConnection;
 import tools.PacketCreator;
 import tools.Pair;
-import tools.packets.Fishing;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -125,7 +123,6 @@ public class World {
     private int mesorate;
     private int questrate;
     private int travelrate;
-    private int fishingrate;
     private final String eventmsg;
     private final List<Channel> channels = new ArrayList<>();
     private final Map<Integer, Byte> pnpcStep = new HashMap<>();
@@ -189,18 +186,16 @@ public class World {
     private ScheduledFuture<?> timedMapObjectsSchedule;
     private Lock timedMapObjectLock = new ReentrantLock(true);
 
-    private final Map<Character, Integer> fishingAttempters = Collections.synchronizedMap(new WeakHashMap<>());
     private Map<Character, Integer> playerHpDec = Collections.synchronizedMap(new WeakHashMap<>());
 
     private ScheduledFuture<?> charactersSchedule;
     private ScheduledFuture<?> marriagesSchedule;
     private ScheduledFuture<?> mapOwnershipSchedule;
-    private ScheduledFuture<?> fishingSchedule;
     private ScheduledFuture<?> partySearchSchedule;
     private ScheduledFuture<?> timeoutSchedule;
     private ScheduledFuture<?> hpDecSchedule;
 
-    public World(int world, int flag, String eventmsg, int exprate, int droprate, int bossdroprate, int mesorate, int questrate, int travelrate, int fishingrate) {
+    public World(int world, int flag, String eventmsg, int exprate, int droprate, int bossdroprate, int mesorate, int questrate, int travelrate) {
         this.id = world;
         this.flag = flag;
         this.eventmsg = eventmsg;
@@ -210,7 +205,6 @@ public class World {
         this.mesorate = mesorate;
         this.questrate = questrate;
         this.travelrate = travelrate;
-        this.fishingrate = fishingrate;
         runningPartyId.set(1000000001); // partyid must not clash with charid to solve update item looting issues, found thanks to Vcoc
         runningMessengerId.set(1);
 
@@ -238,7 +232,6 @@ public class World {
         charactersSchedule = tman.register(new CharacterAutosaverTask(this), HOURS.toMillis(1), HOURS.toMillis(1));
         marriagesSchedule = tman.register(new WeddingReservationTask(this), MINUTES.toMillis(YamlConfig.config.server.WEDDING_RESERVATION_INTERVAL), MINUTES.toMillis(YamlConfig.config.server.WEDDING_RESERVATION_INTERVAL));
         mapOwnershipSchedule = tman.register(new MapOwnershipTask(this), SECONDS.toMillis(20), SECONDS.toMillis(20));
-        fishingSchedule = tman.register(new FishingTask(this), SECONDS.toMillis(10), SECONDS.toMillis(10));
         partySearchSchedule = tman.register(new PartySearchTask(this), SECONDS.toMillis(10), SECONDS.toMillis(10));
         timeoutSchedule = tman.register(new TimeoutTask(this), SECONDS.toMillis(10), SECONDS.toMillis(10));
         hpDecSchedule = tman.register(new CharacterHpDecreaseTask(this), YamlConfig.config.server.MAP_DAMAGE_OVERTIME_INTERVAL, YamlConfig.config.server.MAP_DAMAGE_OVERTIME_INTERVAL);
@@ -448,14 +441,6 @@ public class World {
 
     public int getTransportationTime(int travelTime) {
         return (int) Math.ceil((double) travelTime / travelrate);
-    }
-
-    public int getFishingRate() {
-        return fishingrate;
-    }
-
-    public void setFishingRate(int quest) {
-        this.fishingrate = quest;
     }
 
     public void loadAccountCharactersView(Integer accountId, List<Character> chars) {
@@ -2082,44 +2067,6 @@ public class World {
         }
     }
 
-    public boolean registerFisherPlayer(Character chr, int baitLevel) {
-        synchronized (fishingAttempters) {
-            if (fishingAttempters.containsKey(chr)) {
-                return false;
-            }
-
-            fishingAttempters.put(chr, baitLevel);
-            return true;
-        }
-    }
-
-    public int unregisterFisherPlayer(Character chr) {
-        Integer baitLevel = fishingAttempters.remove(chr);
-        if (baitLevel != null) {
-            return baitLevel;
-        } else {
-            return 0;
-        }
-    }
-
-    public void runCheckFishingSchedule() {
-        double[] fishingLikelihoods = Fishing.fetchFishingLikelihood();
-        double yearLikelihood = fishingLikelihoods[0], timeLikelihood = fishingLikelihoods[1];
-
-        if (!fishingAttempters.isEmpty()) {
-            List<Character> fishingAttemptersList;
-
-            synchronized (fishingAttempters) {
-                fishingAttemptersList = new ArrayList<>(fishingAttempters.keySet());
-            }
-
-            for (Character chr : fishingAttemptersList) {
-                int baitLevel = unregisterFisherPlayer(chr);
-                Fishing.doFishing(chr, baitLevel, yearLikelihood, timeLikelihood);
-            }
-        }
-    }
-
     public void runPartySearchUpdateSchedule() {
         partySearch.updatePartySearchStorage();
         partySearch.runPartySearch();
@@ -2188,11 +2135,6 @@ public class World {
         if (mapOwnershipSchedule != null) {
             mapOwnershipSchedule.cancel(false);
             mapOwnershipSchedule = null;
-        }
-
-        if (fishingSchedule != null) {
-            fishingSchedule.cancel(false);
-            fishingSchedule = null;
         }
 
         if (partySearchSchedule != null) {

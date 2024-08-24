@@ -219,10 +219,6 @@ public final class ItemConstants {
         return itemId < 2000000 && itemId != 0;
     }
 
-    public static boolean isFishingChair(int itemId) {
-        return itemId == ItemId.FISHING_CHAIR;
-    }
-
     public static boolean isMedal(int itemId) {
         return itemId >= 1140000 && itemId < 1143000;
     }

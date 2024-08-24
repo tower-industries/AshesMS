@@ -431,7 +431,6 @@ public class Server {
         int bossdroprate = YamlConfig.config.worlds.get(i).boss_drop_rate;
         int questrate = YamlConfig.config.worlds.get(i).quest_rate;
         int travelrate = YamlConfig.config.worlds.get(i).travel_rate;
-        int fishingrate = YamlConfig.config.worlds.get(i).fishing_rate;
 
         int flag = YamlConfig.config.worlds.get(i).flag;
         String event_message = YamlConfig.config.worlds.get(i).event_message;
@@ -440,7 +439,7 @@ public class Server {
         World world = new World(i,
                 flag,
                 event_message,
-                exprate, droprate, bossdroprate, mesorate, questrate, travelrate, fishingrate);
+                exprate, droprate, bossdroprate, mesorate, questrate, travelrate);
 
         Map<Integer, String> channelInfo = new HashMap<>();
         long bootTime = getCurrentTime();
