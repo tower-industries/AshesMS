@@ -481,7 +481,7 @@ public class Client extends ChannelInboundHandlerAdapter {
         }
 
         try (Connection con = DatabaseConnection.getConnection();
-             PreparedStatement ps = con.prepareStatement("SELECT id, password, gender, banned, pin, pic, characterslots, tos, language FROM accounts WHERE name = ?")) {
+             PreparedStatement ps = con.prepareStatement("SELECT id, password, gender, banned, pin, pic, characterslots, tos FROM accounts WHERE name = ?")) {
             ps.setString(1, login);
 
             try (ResultSet rs = ps.executeQuery()) {
@@ -499,7 +499,6 @@ public class Client extends ChannelInboundHandlerAdapter {
                     pic = rs.getString("pic");
                     gender = rs.getByte("gender");
                     characterSlots = rs.getByte("characterslots");
-                    lang = rs.getInt("language");
                     String passhash = rs.getString("password");
                     byte tos = rs.getByte("tos");
 
@@ -1386,13 +1385,5 @@ public class Client extends ChannelInboundHandlerAdapter {
 
     public void enableCSActions() {
         sendPacket(PacketCreator.enableCSUse(player));
-    }
-
-    public int getLanguage() {
-        return lang;
-    }
-
-    public void setLanguage(int lingua) {
-        this.lang = lingua;
     }
 }
