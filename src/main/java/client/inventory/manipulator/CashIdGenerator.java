@@ -19,7 +19,7 @@
 */
 package client.inventory.manipulator;
 
-import databse.DatabaseConnection;
+import database.DatabaseConnection;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

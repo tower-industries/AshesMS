@@ -21,7 +21,7 @@
 */
 package client;
 
-import databse.DatabaseConnection;
+import database.DatabaseConnection;
 import net.packet.Packet;
 import net.server.PlayerStorage;
 import tools.PacketCreator;

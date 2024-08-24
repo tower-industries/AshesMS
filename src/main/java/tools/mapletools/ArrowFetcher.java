@@ -20,7 +20,7 @@
 package tools.mapletools;
 
 import database.SimpleDatabaseConnection;
-iSimpleDatabaseConnecitonmport server.life.MonsterStats;
+import server.life.MonsterStats;
 import tools.Pair;
 
 import java.io.PrintWriter;
