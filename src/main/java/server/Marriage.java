@@ -26,9 +26,9 @@ import client.inventory.InventoryType;
 import client.inventory.Item;
 import client.inventory.ItemFactory;
 import client.inventory.manipulator.InventoryManipulator;
+import database.DatabaseConnection;
 import scripting.event.EventInstanceManager;
 import scripting.event.EventManager;
-import tools.DatabaseConnection;
 import tools.Pair;
 
 import java.sql.Connection;

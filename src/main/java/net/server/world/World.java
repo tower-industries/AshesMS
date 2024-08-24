@@ -29,6 +29,7 @@ import client.Character;
 import client.Family;
 import config.YamlConfig;
 import constants.game.GameConstants;
+import database.DatabaseConnection;
 import net.packet.Packet;
 import net.server.PlayerStorage;
 import net.server.Server;
@@ -70,7 +71,6 @@ import server.maps.MiniDungeon;
 import server.maps.MiniDungeonInfo;
 import server.maps.PlayerShop;
 import server.maps.PlayerShopItem;
-import tools.DatabaseConnection;
 import tools.PacketCreator;
 import tools.Pair;
 

@@ -23,8 +23,8 @@ package net.server.task;
 
 import client.Job;
 import config.YamlConfig;
+import database.DatabaseConnection;
 import net.server.Server;
-import tools.DatabaseConnection;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

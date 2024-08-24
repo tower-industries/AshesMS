@@ -29,6 +29,7 @@ import client.inventory.Pet;
 import config.YamlConfig;
 import constants.id.ItemId;
 import constants.inventory.ItemConstants;
+import database.DatabaseConnection;
 import net.jcip.annotations.GuardedBy;
 import net.server.Server;
 import provider.Data;
@@ -36,7 +37,6 @@ import provider.DataProvider;
 import provider.DataProviderFactory;
 import provider.DataTool;
 import provider.wz.WZFiles;
-import tools.DatabaseConnection;
 import tools.Pair;
 
 import java.sql.Connection;

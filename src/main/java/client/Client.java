@@ -25,6 +25,7 @@ import client.inventory.InventoryType;
 import config.YamlConfig;
 import constants.game.GameConstants;
 import constants.id.MapId;
+import database.DatabaseConnection;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.handler.timeout.IdleStateEvent;
@@ -66,7 +67,6 @@ import server.maps.FieldLimit;
 import server.maps.MapleMap;
 import server.maps.MiniDungeonInfo;
 import tools.BCrypt;
-import tools.DatabaseConnection;
 import tools.HexTool;
 import tools.PacketCreator;
 

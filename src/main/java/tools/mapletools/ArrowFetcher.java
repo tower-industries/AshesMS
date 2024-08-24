@@ -19,6 +19,7 @@
 */
 package tools.mapletools;
 
+import database.SimpleDatabaseConnection;
 import server.life.MonsterStats;
 import tools.Pair;
 

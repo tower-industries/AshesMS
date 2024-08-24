@@ -21,7 +21,7 @@
 */
 package client;
 
-import tools.DatabaseConnection;
+import database.DatabaseConnection;
 import tools.PacketCreator;
 
 import java.sql.Connection;

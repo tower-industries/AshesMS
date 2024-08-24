@@ -20,9 +20,9 @@
 package client.newyear;
 
 import client.Character;
+import database.DatabaseConnection;
 import net.server.Server;
 import server.TimerManager;
-import tools.DatabaseConnection;
 import tools.PacketCreator;
 
 import java.sql.Connection;

@@ -28,6 +28,7 @@ import client.inventory.Item;
 import config.YamlConfig;
 import constants.game.GameConstants;
 import constants.id.NpcId;
+import database.DatabaseConnection;
 import net.server.Server;
 import net.server.channel.Channel;
 import net.server.world.World;
@@ -39,7 +40,6 @@ import server.maps.AbstractMapObject;
 import server.maps.MapObject;
 import server.maps.MapObjectType;
 import server.maps.MapleMap;
-import tools.DatabaseConnection;
 import tools.PacketCreator;
 import tools.Pair;
 

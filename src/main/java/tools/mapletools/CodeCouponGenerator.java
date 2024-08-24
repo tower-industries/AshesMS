@@ -1,5 +1,6 @@
 package tools.mapletools;
 
+import database.SimpleDatabaseConnection;
 import tools.Pair;
 
 import java.io.BufferedReader;

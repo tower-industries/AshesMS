@@ -31,11 +31,11 @@ import client.inventory.manipulator.InventoryManipulator;
 import client.inventory.manipulator.KarmaManipulator;
 import client.processor.npc.FredrickProcessor;
 import config.YamlConfig;
+import database.DatabaseConnection;
 import net.packet.Packet;
 import net.server.Server;
 import server.ItemInformationProvider;
 import server.Trade;
-import tools.DatabaseConnection;
 import tools.PacketCreator;
 import tools.Pair;
 

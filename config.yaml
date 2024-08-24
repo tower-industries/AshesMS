@@ -155,13 +155,7 @@ worlds:
     why_am_i_recommended: Welcome to Medere!
     channels: 3
 
-
 server:
-    #Database Configuration
-    DB_URL: "jdbc:mysql://localhost:3306/ashes"
-    DB_USER: "root"
-    INIT_CONNECTION_POOL_TIMEOUT: 90    # Seconds
-
     #Login Configuration
     WORLDS: 1                           #Initial number of worlds on the server.
     WLDLIST_SIZE: 21                    #Max possible worlds on the server.

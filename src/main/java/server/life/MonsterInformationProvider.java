@@ -22,6 +22,7 @@ package server.life;
 
 import config.YamlConfig;
 import constants.inventory.ItemConstants;
+import database.DatabaseConnection;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import provider.Data;
@@ -30,7 +31,6 @@ import provider.DataProviderFactory;
 import provider.DataTool;
 import provider.wz.WZFiles;
 import server.ItemInformationProvider;
-import tools.DatabaseConnection;
 import tools.Pair;
 import tools.Randomizer;
 

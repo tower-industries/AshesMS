@@ -1,8 +1,8 @@
 package tools.mapletools;
 
+import database.DatabaseConnection;
 import provider.wz.WZFiles;
 import server.ItemInformationProvider;
-import tools.DatabaseConnection;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;

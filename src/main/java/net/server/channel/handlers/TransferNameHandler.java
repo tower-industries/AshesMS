@@ -23,9 +23,9 @@ package net.server.channel.handlers;
 import client.Character;
 import client.Client;
 import config.YamlConfig;
+import database.DatabaseConnection;
 import net.AbstractPacketHandler;
 import net.packet.InPacket;
-import tools.DatabaseConnection;
 import tools.PacketCreator;
 
 import java.sql.Connection;

@@ -20,6 +20,7 @@
 package server;
 
 import client.Character;
+import database.DatabaseConnection;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import provider.Data;
@@ -27,7 +28,6 @@ import provider.DataProvider;
 import provider.DataProviderFactory;
 import provider.DataTool;
 import provider.wz.WZFiles;
-import tools.DatabaseConnection;
 
 import java.io.IOException;
 import java.nio.file.DirectoryStream;

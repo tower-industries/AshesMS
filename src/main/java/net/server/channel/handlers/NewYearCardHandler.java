@@ -25,10 +25,10 @@ import client.inventory.Item;
 import client.newyear.NewYearCardRecord;
 import constants.id.ItemId;
 import constants.inventory.ItemConstants;
+import database.DatabaseConnection;
 import net.AbstractPacketHandler;
 import net.packet.InPacket;
 import net.server.Server;
-import tools.DatabaseConnection;
 import tools.PacketCreator;
 
 import java.sql.Connection;

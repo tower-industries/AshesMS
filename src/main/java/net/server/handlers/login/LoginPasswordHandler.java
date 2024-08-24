@@ -24,12 +24,12 @@ package net.server.handlers.login;
 import client.Client;
 import client.DefaultDates;
 import config.YamlConfig;
+import database.DatabaseConnection;
 import net.PacketHandler;
 import net.packet.InPacket;
 import net.server.Server;
 import net.server.coordinator.session.Hwid;
 import tools.BCrypt;
-import tools.DatabaseConnection;
 import tools.HexTool;
 import tools.PacketCreator;
 

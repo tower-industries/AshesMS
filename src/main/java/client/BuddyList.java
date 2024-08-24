@@ -21,9 +21,9 @@
 */
 package client;
 
+import database.DatabaseConnection;
 import net.packet.Packet;
 import net.server.PlayerStorage;
-import tools.DatabaseConnection;
 import tools.PacketCreator;
 
 import java.sql.Connection;

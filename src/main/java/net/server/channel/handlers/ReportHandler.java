@@ -23,10 +23,10 @@ package net.server.channel.handlers;
 
 import client.Character;
 import client.Client;
+import database.DatabaseConnection;
 import net.AbstractPacketHandler;
 import net.packet.InPacket;
 import net.server.Server;
-import tools.DatabaseConnection;
 import tools.PacketCreator;
 
 import java.sql.Connection;

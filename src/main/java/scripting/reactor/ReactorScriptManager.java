@@ -22,12 +22,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 package scripting.reactor;
 
 import client.Client;
+import database.DatabaseConnection;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import scripting.AbstractScriptManager;
 import server.maps.Reactor;
 import server.maps.ReactorDropEntry;
-import tools.DatabaseConnection;
 
 import javax.script.Invocable;
 import javax.script.ScriptEngine;

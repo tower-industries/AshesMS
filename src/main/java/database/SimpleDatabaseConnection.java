@@ -1,17 +1,14 @@
-package tools.mapletools;
+package database;
 
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.core.config.Configurator;
-import tools.DatabaseConnection;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 
-final class SimpleDatabaseConnection {
-    private SimpleDatabaseConnection() {}
-
-    static Connection getConnection() {
+public final class SimpleDatabaseConnection {
+    public static Connection getConnection() {
         muffleLogging();
         DatabaseConnection.initializeConnectionPool();
 

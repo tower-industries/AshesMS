@@ -22,7 +22,7 @@ package net.server.task;
 import net.server.Server;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import tools.DatabaseConnection;
+import database.DatabaseConnection;
 
 import java.sql.Connection;
 import java.sql.SQLException;

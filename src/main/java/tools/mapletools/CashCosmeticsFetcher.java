@@ -1,7 +1,7 @@
 package tools.mapletools;
 
+import database.DatabaseConnection;
 import server.ItemInformationProvider;
-import tools.DatabaseConnection;
 
 import java.io.BufferedReader;
 import java.io.File;

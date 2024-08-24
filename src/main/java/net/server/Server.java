@@ -35,6 +35,7 @@ import constants.game.GameConstants;
 import constants.inventory.ItemConstants;
 import constants.net.OpcodeConstants;
 import constants.net.ServerConstants;
+import database.DatabaseConnection;
 import net.ChannelDependencies;
 import net.PacketProcessor;
 import net.netty.LoginServer;
@@ -69,7 +70,6 @@ import server.TimerManager;
 import server.expeditions.ExpeditionBossLog;
 import server.life.PlayerNPC;
 import server.quest.Quest;
-import tools.DatabaseConnection;
 import tools.Pair;
 
 import java.sql.Connection;
