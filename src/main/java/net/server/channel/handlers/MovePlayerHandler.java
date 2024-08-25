@@ -22,9 +22,9 @@
 package net.server.channel.handlers;
 
 import client.Client;
-import net.packet.InPacket;
 import net.PacketCreator;
-import tools.exceptions.EmptyMovementException;
+import net.exceptions.EmptyMovementException;
+import net.packet.InPacket;
 
 public final class MovePlayerHandler extends AbstractMovementPacketHandler {
     @Override

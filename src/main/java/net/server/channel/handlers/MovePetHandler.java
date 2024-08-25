@@ -26,7 +26,7 @@ import client.Client;
 import net.packet.InPacket;
 import server.movement.LifeMovementFragment;
 import net.PacketCreator;
-import tools.exceptions.EmptyMovementException;
+import net.exceptions.EmptyMovementException;
 
 import java.util.List;
 

@@ -32,7 +32,7 @@ import server.movement.JumpDownMovement;
 import server.movement.LifeMovementFragment;
 import server.movement.RelativeLifeMovement;
 import server.movement.TeleportMovement;
-import tools.exceptions.EmptyMovementException;
+import net.exceptions.EmptyMovementException;
 
 import java.awt.*;
 import java.util.ArrayList;

@@ -22,7 +22,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import server.Marriage;
 import net.PacketCreator;
-import tools.packets.WeddingPackets;
+import net.packet.WeddingPackets;
 
 import java.util.Collections;
 import java.util.List;
