@@ -21,14 +21,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 package net.server.channel.handlers;
 
+import java.awt.Point;
+
 import client.Character;
 import client.Client;
+import net.PacketCreator;
+import net.exceptions.EmptyMovementException;
 import net.packet.InPacket;
 import server.maps.Dragon;
-import net.PacketCreator;
-import tools.exceptions.EmptyMovementException;
-
-import java.awt.*;
 
 
 public class MoveDragonHandler extends AbstractMovementPacketHandler {

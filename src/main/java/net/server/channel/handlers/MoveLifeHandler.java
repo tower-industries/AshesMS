@@ -21,12 +21,19 @@
 */
 package net.server.channel.handlers;
 
+import java.awt.Point;
+import java.util.LinkedList;
+import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import client.Character;
 import client.Client;
 import config.YamlConfig;
+import net.PacketCreator;
+import net.exceptions.EmptyMovementException;
 import net.packet.InPacket;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import server.life.MobSkill;
 import server.life.MobSkillFactory;
 import server.life.MobSkillId;
@@ -36,12 +43,6 @@ import server.life.MonsterInformationProvider;
 import server.maps.MapObject;
 import server.maps.MapObjectType;
 import server.maps.MapleMap;
-import net.PacketCreator;
-import tools.exceptions.EmptyMovementException;
-
-import java.awt.*;
-import java.util.LinkedList;
-import java.util.List;
 
 /**
  * @author Danny (Leifde)
