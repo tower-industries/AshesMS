@@ -40,7 +40,7 @@ import server.life.LifeFactory;
 import server.life.Monster;
 import server.maps.MapleMap;
 import server.quest.Quest;
-import tools.exceptions.EventInstanceInProgressException;
+import scripting.exceptions.EventInstanceInProgressException;
 
 import javax.script.Invocable;
 import javax.script.ScriptException;
