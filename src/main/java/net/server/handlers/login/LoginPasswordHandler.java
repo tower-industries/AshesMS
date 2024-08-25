@@ -1,5 +1,5 @@
 /*
- This file is part of the OdinMS Maple Story Server
+o This file is part of the OdinMS Maple Story Server
  Copyright (C) 2008 Patrick Huy <patrick.huy@frz.cc>
  Matthias Butz <matze@odinms.de>
  Jan Christian Meyer <vimes@odinms.de>
@@ -21,8 +21,6 @@
  */
 package net.server.handlers.login;
 
-import java.io.UnsupportedEncodingException;
-import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -82,7 +80,7 @@ public final class LoginPasswordHandler implements PacketHandler {
                     rs.next();
                     c.setAccID(rs.getInt(1));
                 }
-            } catch (SQLException | NoSuchAlgorithmException | UnsupportedEncodingException e) {
+            } catch (SQLException e) {
                 c.setAccID(-1);
                 e.printStackTrace();
             } finally {
