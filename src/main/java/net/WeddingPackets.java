@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package tools.packets;
+package net;
 
 import client.Character;
 import client.inventory.Item;
@@ -15,7 +15,6 @@ import net.packet.OutPacket;
 import net.packet.Packet;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import net.PacketCreator;
 import tools.StringUtil;
 
 import java.util.ArrayList;

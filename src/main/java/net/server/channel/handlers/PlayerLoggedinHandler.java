@@ -62,7 +62,7 @@ import scripting.event.EventInstanceManager;
 import server.life.MobSkill;
 import net.PacketCreator;
 import tools.Pair;
-import tools.packets.WeddingPackets;
+import net.WeddingPackets;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
