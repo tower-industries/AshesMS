@@ -12,6 +12,7 @@
 /out
 *.onetoc2
 .gradle/
+bin/
 
 # Eclipse m2e generated files
 # Eclipse Core

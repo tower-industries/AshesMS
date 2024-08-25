@@ -21,21 +21,7 @@
  */
 package net.server.handlers.login;
 
-import client.Client;
-import client.DefaultDates;
-import config.YamlConfig;
-import database.DatabaseConnection;
-import net.PacketHandler;
-import net.packet.InPacket;
-import net.server.Server;
-import net.server.coordinator.session.Hwid;
-import tools.BCrypt;
-import tools.HexTool;
-import tools.PacketCreator;
-
 import java.io.UnsupportedEncodingException;
-import java.nio.charset.StandardCharsets;
-import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.Date;
@@ -46,17 +32,23 @@ import java.sql.Statement;
 import java.sql.Timestamp;
 import java.util.Calendar;
 
+import client.Client;
+import client.DefaultDates;
+import config.YamlConfig;
+import database.DatabaseConnection;
+import net.PacketHandler;
+import net.packet.InPacket;
+import net.server.Server;
+import net.server.coordinator.session.Hwid;
+import tools.HexTool;
+import tools.PacketCreator;
+import utils.Crypto;
+
 public final class LoginPasswordHandler implements PacketHandler {
 
     @Override
     public boolean validateState(Client c) {
         return !c.isLoggedIn();
-    }
-
-    private static String hashpwSHA512(String pwd) throws NoSuchAlgorithmException, UnsupportedEncodingException {
-        MessageDigest digester = MessageDigest.getInstance("SHA-512");
-        digester.update(pwd.getBytes(StandardCharsets.UTF_8), 0, pwd.length());
-        return HexTool.toHexString(digester.digest()).replace(" ", "").toLowerCase();
     }
 
     @Override
@@ -79,9 +71,9 @@ public final class LoginPasswordHandler implements PacketHandler {
 
         if (YamlConfig.config.server.AUTOMATIC_REGISTER && loginok == 5) {
             try (Connection con = DatabaseConnection.getConnection();
-                 PreparedStatement ps = con.prepareStatement("INSERT INTO accounts (name, password, birthday, tempban) VALUES (?, ?, ?, ?);", Statement.RETURN_GENERATED_KEYS)) { //Jayd: Added birthday, tempban
-                ps.setString(1, login);
-                ps.setString(2, YamlConfig.config.server.BCRYPT_MIGRATION ? BCrypt.hashpw(pwd, BCrypt.gensalt(12)) : hashpwSHA512(pwd));
+                 PreparedStatement ps = con.prepareStatement("INSERT INTO accounts (name, password, birthday, tempban) VALUES (?, ?, ?, ?);", Statement.RETURN_GENERATED_KEYS)) {
+				ps.setString(1, login);
+                ps.setString(2, Crypto.hashpw(pwd, Crypto.gensalt(12)));
                 ps.setDate(3, Date.valueOf(DefaultDates.getBirthday()));
                 ps.setTimestamp(4, Timestamp.valueOf(DefaultDates.getTempban()));
                 ps.executeUpdate();
@@ -101,7 +93,7 @@ public final class LoginPasswordHandler implements PacketHandler {
         if (YamlConfig.config.server.BCRYPT_MIGRATION && (loginok <= -10)) { // -10 means migration to bcrypt, -23 means TOS wasn't accepted
             try (Connection con = DatabaseConnection.getConnection();
                  PreparedStatement ps = con.prepareStatement("UPDATE accounts SET password = ? WHERE name = ?;")) {
-                ps.setString(1, BCrypt.hashpw(pwd, BCrypt.gensalt(12)));
+                ps.setString(1, Crypto.hashpw(pwd, Crypto.gensalt(12)));
                 ps.setString(2, login);
                 ps.executeUpdate();
             } catch (SQLException e) {
