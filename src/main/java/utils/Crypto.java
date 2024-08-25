@@ -11,7 +11,7 @@
 // WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 // ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 // OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-package tools;
+package utils;
 
 import java.nio.charset.StandardCharsets;
 import java.security.SecureRandom;
@@ -60,7 +60,7 @@ import java.util.Arrays;
  * @author Damien Miller
  * @version 0.4
  */
-public class BCrypt {
+public class Crypto {
     // BCrypt parameters
 
     private static final int GENSALT_DEFAULT_LOG2_ROUNDS = 10;
@@ -770,7 +770,7 @@ public class BCrypt {
      * @return the hashed password
      */
     public static String hashpw(byte[] passwordb, String salt) {
-        BCrypt B;
+        Crypto B;
         String real_salt;
         byte[] saltb, hashed;
         char minor = (char) 0;
@@ -806,7 +806,7 @@ public class BCrypt {
             passwordb = Arrays.copyOf(passwordb, passwordb.length + 1);
         }
 
-        B = new BCrypt();
+        B = new Crypto();
         hashed = B.crypt_raw(passwordb, saltb, rounds,
                 minor == 'x',  // true for sign extension bug ('2x')
                 minor == 'a' ? 0x10000 : 0, // safety factor for '2a'
