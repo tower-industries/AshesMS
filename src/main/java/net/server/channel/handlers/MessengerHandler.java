@@ -32,7 +32,7 @@ import net.server.coordinator.world.InviteCoordinator.InviteType;
 import net.server.world.Messenger;
 import net.server.world.MessengerCharacter;
 import net.server.world.World;
-import tools.PacketCreator;
+import net.PacketCreator;
 
 public final class MessengerHandler extends AbstractPacketHandler {
     @Override

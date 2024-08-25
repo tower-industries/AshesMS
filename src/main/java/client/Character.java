@@ -151,7 +151,7 @@ import server.partyquest.MonsterCarnivalParty;
 import server.partyquest.PartyQuest;
 import server.quest.Quest;
 import tools.LongTool;
-import tools.PacketCreator;
+import net.PacketCreator;
 import tools.Pair;
 import tools.Randomizer;
 import tools.packets.WeddingPackets;

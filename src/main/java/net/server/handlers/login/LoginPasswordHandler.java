@@ -39,7 +39,7 @@ import net.packet.InPacket;
 import net.server.Server;
 import net.server.coordinator.session.Hwid;
 import tools.HexTool;
-import tools.PacketCreator;
+import net.PacketCreator;
 import utils.Crypto;
 
 public final class LoginPasswordHandler implements PacketHandler {

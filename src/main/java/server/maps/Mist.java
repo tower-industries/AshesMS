@@ -34,7 +34,7 @@ import net.packet.Packet;
 import server.StatEffect;
 import server.life.MobSkill;
 import server.life.Monster;
-import tools.PacketCreator;
+import net.PacketCreator;
 
 import java.awt.*;
 

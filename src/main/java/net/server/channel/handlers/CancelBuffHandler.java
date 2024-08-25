@@ -34,7 +34,7 @@ import constants.skills.WindArcher;
 import net.AbstractPacketHandler;
 import net.PacketHandler;
 import net.packet.InPacket;
-import tools.PacketCreator;
+import net.PacketCreator;
 
 public final class CancelBuffHandler extends AbstractPacketHandler implements PacketHandler {
 

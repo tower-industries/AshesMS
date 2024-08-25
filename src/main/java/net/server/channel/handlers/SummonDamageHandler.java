@@ -39,7 +39,7 @@ import server.StatEffect;
 import server.life.Monster;
 import server.life.MonsterInformationProvider;
 import server.maps.Summon;
-import tools.PacketCreator;
+import net.PacketCreator;
 
 import java.awt.*;
 import java.util.ArrayList;

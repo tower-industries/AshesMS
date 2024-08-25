@@ -35,7 +35,7 @@ import constants.skills.ILArchMage;
 import net.packet.InPacket;
 import net.packet.Packet;
 import server.StatEffect;
-import tools.PacketCreator;
+import net.PacketCreator;
 
 import static java.util.concurrent.TimeUnit.SECONDS;
 

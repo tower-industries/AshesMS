@@ -38,7 +38,7 @@ import net.server.world.Party;
 import net.server.world.World;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import tools.PacketCreator;
+import net.PacketCreator;
 
 import java.util.HashSet;
 import java.util.Set;

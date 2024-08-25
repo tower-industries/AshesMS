@@ -26,7 +26,7 @@ import config.YamlConfig;
 import database.DatabaseConnection;
 import net.AbstractPacketHandler;
 import net.packet.InPacket;
-import tools.PacketCreator;
+import net.PacketCreator;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

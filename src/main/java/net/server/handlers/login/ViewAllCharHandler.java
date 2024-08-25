@@ -27,7 +27,7 @@ import config.YamlConfig;
 import net.AbstractPacketHandler;
 import net.packet.InPacket;
 import net.server.Server;
-import tools.PacketCreator;
+import net.PacketCreator;
 
 import java.util.List;
 import java.util.Map;

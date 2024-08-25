@@ -5,7 +5,7 @@ import net.AbstractPacketHandler;
 import net.packet.InPacket;
 import net.packet.Packet;
 import server.ChatLogger;
-import tools.PacketCreator;
+import net.PacketCreator;
 
 /**
  * @author kevintjuh93

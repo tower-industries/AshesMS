@@ -27,7 +27,7 @@ import net.packet.InPacket;
 import server.Trade;
 import server.Trade.TradeResult;
 import server.maps.Portal;
-import tools.PacketCreator;
+import net.PacketCreator;
 
 public final class ChangeMapSpecialHandler extends AbstractPacketHandler {
     @Override

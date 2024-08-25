@@ -25,7 +25,7 @@ import client.Character;
 import client.Client;
 import net.packet.InPacket;
 import server.maps.Dragon;
-import tools.PacketCreator;
+import net.PacketCreator;
 import tools.exceptions.EmptyMovementException;
 
 import java.awt.*;

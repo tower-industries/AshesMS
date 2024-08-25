@@ -36,7 +36,7 @@ import server.life.Monster;
 import server.maps.MapObject;
 import server.maps.MapObjectType;
 import server.quest.Quest;
-import tools.PacketCreator;
+import net.PacketCreator;
 import tools.Randomizer;
 
 import java.util.Arrays;

@@ -35,7 +35,7 @@ import org.slf4j.LoggerFactory;
 import server.ItemInformationProvider;
 import server.MakerItemFactory;
 import server.MakerItemFactory.MakerItemCreateEntry;
-import tools.PacketCreator;
+import net.PacketCreator;
 import tools.Pair;
 
 import java.util.LinkedHashMap;

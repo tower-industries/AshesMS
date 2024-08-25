@@ -28,7 +28,7 @@ import net.packet.InPacket;
 import server.events.gm.Coconut;
 import server.events.gm.Coconuts;
 import server.maps.MapleMap;
-import tools.PacketCreator;
+import net.PacketCreator;
 
 /**
  * @author kevintjuh93

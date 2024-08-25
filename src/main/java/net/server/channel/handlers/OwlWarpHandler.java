@@ -25,7 +25,7 @@ import net.AbstractPacketHandler;
 import net.packet.InPacket;
 import server.maps.HiredMerchant;
 import server.maps.PlayerShop;
-import tools.PacketCreator;
+import net.PacketCreator;
 
 /*
  * @author Ronan

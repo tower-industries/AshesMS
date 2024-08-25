@@ -40,7 +40,7 @@ import server.maps.AbstractMapObject;
 import server.maps.MapObject;
 import server.maps.MapObjectType;
 import server.maps.MapleMap;
-import tools.PacketCreator;
+import net.PacketCreator;
 import tools.Pair;
 
 import java.awt.*;

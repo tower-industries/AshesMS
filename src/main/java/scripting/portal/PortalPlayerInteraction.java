@@ -26,7 +26,7 @@ import database.DatabaseConnection;
 import scripting.AbstractPlayerInteraction;
 import scripting.map.MapScriptManager;
 import server.maps.Portal;
-import tools.PacketCreator;
+import net.PacketCreator;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

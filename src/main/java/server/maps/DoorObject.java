@@ -23,7 +23,7 @@ import client.Character;
 import client.Client;
 import constants.id.MapId;
 import net.server.world.Party;
-import tools.PacketCreator;
+import net.PacketCreator;
 
 import java.awt.*;
 import java.util.concurrent.locks.Lock;

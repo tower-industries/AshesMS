@@ -24,7 +24,7 @@ import client.Client;
 import net.AbstractPacketHandler;
 import net.packet.InPacket;
 import scripting.event.EventInstanceManager;
-import tools.PacketCreator;
+import net.PacketCreator;
 import tools.packets.WeddingPackets;
 
 /**

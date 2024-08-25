@@ -92,7 +92,7 @@ import server.maps.FieldLimit;
 import server.maps.MapleMap;
 import server.maps.MiniDungeonInfo;
 import tools.HexTool;
-import tools.PacketCreator;
+import net.PacketCreator;
 import utils.Crypto;
 
 public class Client extends ChannelInboundHandlerAdapter {

@@ -36,7 +36,7 @@ import net.packet.Packet;
 import net.server.Server;
 import server.ItemInformationProvider;
 import server.Trade;
-import tools.PacketCreator;
+import net.PacketCreator;
 import tools.Pair;
 
 import java.sql.Connection;

@@ -23,7 +23,7 @@ package server.maps;
 
 import client.Client;
 import net.packet.Packet;
-import tools.PacketCreator;
+import net.PacketCreator;
 
 public class MapEffect {
     private final String msg;

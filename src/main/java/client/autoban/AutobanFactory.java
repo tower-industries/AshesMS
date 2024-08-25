@@ -27,7 +27,7 @@ import config.YamlConfig;
 import net.server.Server;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import tools.PacketCreator;
+import net.PacketCreator;
 
 import java.util.Collection;
 import java.util.HashSet;

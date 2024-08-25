@@ -71,7 +71,7 @@ import server.maps.MiniDungeon;
 import server.maps.MiniDungeonInfo;
 import server.maps.PlayerShop;
 import server.maps.PlayerShopItem;
-import tools.PacketCreator;
+import net.PacketCreator;
 import tools.Pair;
 
 import java.sql.Connection;

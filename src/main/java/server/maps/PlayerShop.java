@@ -30,7 +30,7 @@ import client.inventory.manipulator.InventoryManipulator;
 import client.inventory.manipulator.KarmaManipulator;
 import net.packet.Packet;
 import server.Trade;
-import tools.PacketCreator;
+import net.PacketCreator;
 import tools.Pair;
 
 import java.util.ArrayList;

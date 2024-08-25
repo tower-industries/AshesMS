@@ -70,7 +70,7 @@ import server.life.SpawnPoint;
 import server.partyquest.CarnivalFactory;
 import server.partyquest.CarnivalFactory.MCSkill;
 import server.partyquest.GuardianSpawnPoint;
-import tools.PacketCreator;
+import net.PacketCreator;
 import tools.Pair;
 import tools.Randomizer;
 

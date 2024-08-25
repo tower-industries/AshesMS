@@ -11,7 +11,7 @@ import net.packet.InPacket;
 import server.ItemInformationProvider;
 import server.ItemInformationProvider.QuestConsItem;
 import server.quest.Quest;
-import tools.PacketCreator;
+import net.PacketCreator;
 
 import java.util.Map;
 

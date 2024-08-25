@@ -27,7 +27,7 @@ import client.creator.novice.LegendCreator;
 import client.creator.novice.NoblesseCreator;
 import net.AbstractPacketHandler;
 import net.packet.InPacket;
-import tools.PacketCreator;
+import net.PacketCreator;
 
 public final class CreateCharHandler extends AbstractPacketHandler {
 

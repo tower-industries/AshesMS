@@ -28,7 +28,7 @@ import net.AbstractPacketHandler;
 import net.packet.InPacket;
 import server.maps.MapItem;
 import server.maps.MapObject;
-import tools.PacketCreator;
+import net.PacketCreator;
 
 import java.util.Set;
 

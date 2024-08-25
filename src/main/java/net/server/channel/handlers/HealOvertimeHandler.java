@@ -29,7 +29,7 @@ import net.AbstractPacketHandler;
 import net.packet.InPacket;
 import net.server.Server;
 import server.maps.MapleMap;
-import tools.PacketCreator;
+import net.PacketCreator;
 
 public final class HealOvertimeHandler extends AbstractPacketHandler {
     @Override

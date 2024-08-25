@@ -29,7 +29,7 @@ import net.AbstractPacketHandler;
 import net.packet.InPacket;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import tools.PacketCreator;
+import net.PacketCreator;
 
 public final class GiveFameHandler extends AbstractPacketHandler {
     private static final Logger log = LoggerFactory.getLogger(GiveFameHandler.class);

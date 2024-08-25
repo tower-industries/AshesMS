@@ -31,7 +31,7 @@ import client.inventory.manipulator.InventoryManipulator;
 import constants.game.ExpTable;
 import net.AbstractPacketHandler;
 import net.packet.InPacket;
-import tools.PacketCreator;
+import net.PacketCreator;
 
 /**
  * @author PurpleMadness

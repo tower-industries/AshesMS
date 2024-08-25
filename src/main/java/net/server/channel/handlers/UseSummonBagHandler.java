@@ -29,7 +29,7 @@ import net.AbstractPacketHandler;
 import net.packet.InPacket;
 import server.ItemInformationProvider;
 import server.life.LifeFactory;
-import tools.PacketCreator;
+import net.PacketCreator;
 import tools.Randomizer;
 
 /**

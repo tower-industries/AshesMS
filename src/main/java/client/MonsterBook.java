@@ -22,7 +22,7 @@
 package client;
 
 import database.DatabaseConnection;
-import tools.PacketCreator;
+import net.PacketCreator;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

@@ -25,7 +25,7 @@ package server.events.gm;
 import client.Character;
 import constants.id.MapId;
 import server.TimerManager;
-import tools.PacketCreator;
+import net.PacketCreator;
 
 import java.util.concurrent.ScheduledFuture;
 

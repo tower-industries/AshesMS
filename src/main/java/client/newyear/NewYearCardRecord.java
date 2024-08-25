@@ -23,7 +23,7 @@ import client.Character;
 import database.DatabaseConnection;
 import net.server.Server;
 import server.TimerManager;
-import tools.PacketCreator;
+import net.PacketCreator;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

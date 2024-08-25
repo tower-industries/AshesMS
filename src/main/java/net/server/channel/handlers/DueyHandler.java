@@ -26,7 +26,7 @@ import client.processor.npc.DueyProcessor;
 import config.YamlConfig;
 import net.AbstractPacketHandler;
 import net.packet.InPacket;
-import tools.PacketCreator;
+import net.PacketCreator;
 
 public final class DueyHandler extends AbstractPacketHandler {
 

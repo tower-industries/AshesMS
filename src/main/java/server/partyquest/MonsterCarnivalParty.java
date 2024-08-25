@@ -2,7 +2,7 @@ package server.partyquest;
 
 import client.Character;
 import server.maps.MapleMap;
-import tools.PacketCreator;
+import net.PacketCreator;
 
 import java.util.LinkedList;
 import java.util.List;

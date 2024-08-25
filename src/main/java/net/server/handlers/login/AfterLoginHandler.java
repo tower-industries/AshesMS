@@ -25,7 +25,7 @@ import client.Client;
 import net.AbstractPacketHandler;
 import net.packet.InPacket;
 import net.server.coordinator.session.SessionCoordinator;
-import tools.PacketCreator;
+import net.PacketCreator;
 
 public final class AfterLoginHandler extends AbstractPacketHandler {
 

@@ -28,7 +28,7 @@ import net.packet.InPacket;
 import scripting.event.EventInstanceManager;
 import server.life.Monster;
 import server.maps.MapleMap;
-import tools.PacketCreator;
+import net.PacketCreator;
 import tools.Randomizer;
 
 /**

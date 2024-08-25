@@ -24,7 +24,7 @@ package client;
 import database.DatabaseConnection;
 import net.packet.Packet;
 import net.server.PlayerStorage;
-import tools.PacketCreator;
+import net.PacketCreator;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

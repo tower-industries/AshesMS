@@ -62,7 +62,7 @@ import server.maps.MapObjectType;
 import server.maps.MapleMap;
 import server.maps.Summon;
 import tools.IntervalBuilder;
-import tools.PacketCreator;
+import net.PacketCreator;
 import tools.Pair;
 import tools.Randomizer;
 

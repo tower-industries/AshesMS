@@ -28,7 +28,7 @@ import client.inventory.PetCommand;
 import client.inventory.PetDataFactory;
 import net.AbstractPacketHandler;
 import net.packet.InPacket;
-import tools.PacketCreator;
+import net.PacketCreator;
 import tools.Randomizer;
 
 public final class PetCommandHandler extends AbstractPacketHandler {

@@ -53,7 +53,7 @@ import provider.wz.WZFiles;
 import server.MakerItemFactory.MakerItemCreateEntry;
 import server.life.LifeFactory;
 import server.life.MonsterInformationProvider;
-import tools.PacketCreator;
+import net.PacketCreator;
 import tools.Pair;
 import tools.Randomizer;
 import tools.StringUtil;

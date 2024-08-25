@@ -50,7 +50,7 @@ import server.life.MobSkillType;
 import server.life.Monster;
 import server.maps.MapObject;
 import server.maps.MapleMap;
-import tools.PacketCreator;
+import net.PacketCreator;
 import tools.Randomizer;
 
 import java.awt.*;

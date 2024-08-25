@@ -24,7 +24,7 @@ package server.maps;
 import client.Character;
 import client.Client;
 import client.SkillFactory;
-import tools.PacketCreator;
+import net.PacketCreator;
 
 import java.awt.*;
 

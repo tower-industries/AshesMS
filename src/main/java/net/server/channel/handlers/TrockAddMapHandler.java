@@ -26,7 +26,7 @@ import client.Client;
 import net.AbstractPacketHandler;
 import net.packet.InPacket;
 import server.maps.FieldLimit;
-import tools.PacketCreator;
+import net.PacketCreator;
 
 /**
  * @author kevintjuh93

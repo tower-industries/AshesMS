@@ -28,7 +28,7 @@ import net.packet.InPacket;
 import net.server.coordinator.world.InviteCoordinator;
 import net.server.coordinator.world.InviteCoordinator.InviteResultType;
 import net.server.coordinator.world.InviteCoordinator.InviteType;
-import tools.PacketCreator;
+import net.PacketCreator;
 
 public final class DenyPartyRequestHandler extends AbstractPacketHandler {
 

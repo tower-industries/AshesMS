@@ -27,7 +27,7 @@ import net.AbstractPacketHandler;
 import net.packet.InPacket;
 import server.life.Monster;
 import server.maps.MapObject;
-import tools.PacketCreator;
+import net.PacketCreator;
 import tools.Pair;
 
 import java.util.Collections;

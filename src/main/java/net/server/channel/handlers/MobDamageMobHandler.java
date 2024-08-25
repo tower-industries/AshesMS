@@ -33,7 +33,7 @@ import org.slf4j.LoggerFactory;
 import server.life.Monster;
 import server.life.MonsterInformationProvider;
 import server.maps.MapleMap;
-import tools.PacketCreator;
+import net.PacketCreator;
 
 import java.util.Map;
 

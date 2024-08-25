@@ -42,7 +42,7 @@ import org.slf4j.LoggerFactory;
 import server.DueyPackage;
 import server.ItemInformationProvider;
 import server.Trade;
-import tools.PacketCreator;
+import net.PacketCreator;
 import tools.Pair;
 
 import java.sql.Connection;
