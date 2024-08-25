@@ -26,7 +26,7 @@ import client.Client;
 import constants.game.GameConstants;
 import constants.id.MapId;
 import scripting.portal.PortalScriptManager;
-import tools.PacketCreator;
+import net.PacketCreator;
 
 import java.awt.*;
 import java.util.concurrent.locks.Lock;

@@ -32,7 +32,7 @@ import net.AbstractPacketHandler;
 import net.packet.InPacket;
 import net.server.Server;
 import server.ItemInformationProvider;
-import tools.PacketCreator;
+import net.PacketCreator;
 
 public final class InventoryMergeHandler extends AbstractPacketHandler {
 

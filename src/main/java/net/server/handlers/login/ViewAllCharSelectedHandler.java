@@ -31,7 +31,7 @@ import net.server.coordinator.session.SessionCoordinator.AntiMulticlientResult;
 import net.server.world.World;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import tools.PacketCreator;
+import net.PacketCreator;
 import tools.Randomizer;
 
 import java.net.InetAddress;

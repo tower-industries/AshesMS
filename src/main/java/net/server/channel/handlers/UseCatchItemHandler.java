@@ -34,7 +34,7 @@ import net.packet.InPacket;
 import net.server.Server;
 import server.ItemInformationProvider;
 import server.life.Monster;
-import tools.PacketCreator;
+import net.PacketCreator;
 
 /**
  * @author kevintjuh93

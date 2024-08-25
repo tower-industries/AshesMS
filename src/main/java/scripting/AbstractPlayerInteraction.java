@@ -51,7 +51,7 @@ import server.maps.MapleMap;
 import server.partyquest.PartyQuest;
 import server.partyquest.Pyramid;
 import server.quest.Quest;
-import tools.PacketCreator;
+import net.PacketCreator;
 import tools.Pair;
 
 import java.awt.*;

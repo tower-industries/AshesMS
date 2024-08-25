@@ -49,7 +49,7 @@ function start() {
     }
 
     const LifeFactory = Java.type('server.life.LifeFactory');
-    const PacketCreator = Java.type('tools.PacketCreator');
+    const PacketCreator = Java.type('net.PacketCreator');
     const Point = Java.type('java.awt.Point');
     const spawnpoint = new Point(90, 119);
     dangeroudCroko1.spawnMonsterOnGroundBelow(LifeFactory.getMonster(6220000), spawnpoint);

@@ -4,7 +4,7 @@ import client.Client;
 import client.inventory.Item;
 import client.inventory.manipulator.InventoryManipulator;
 import constants.id.ItemId;
-import tools.PacketCreator;
+import net.PacketCreator;
 import tools.Randomizer;
 
 /**

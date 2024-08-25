@@ -45,7 +45,7 @@ import server.maps.MapManager;
 import server.maps.MapleMap;
 import server.maps.Portal;
 import server.maps.Reactor;
-import tools.PacketCreator;
+import net.PacketCreator;
 import tools.Pair;
 
 import javax.script.ScriptException;

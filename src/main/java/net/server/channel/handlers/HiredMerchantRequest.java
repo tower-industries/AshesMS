@@ -31,7 +31,7 @@ import server.maps.MapObject;
 import server.maps.MapObjectType;
 import server.maps.PlayerShop;
 import server.maps.Portal;
-import tools.PacketCreator;
+import net.PacketCreator;
 
 import java.awt.*;
 import java.sql.SQLException;

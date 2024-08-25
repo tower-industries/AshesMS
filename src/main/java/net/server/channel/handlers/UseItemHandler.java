@@ -33,7 +33,7 @@ import net.AbstractPacketHandler;
 import net.packet.InPacket;
 import server.ItemInformationProvider;
 import server.StatEffect;
-import tools.PacketCreator;
+import net.PacketCreator;
 
 /**
  * @author Matze

@@ -27,7 +27,7 @@ import net.AbstractPacketHandler;
 import net.packet.InPacket;
 import net.server.Server;
 import server.maps.MiniDungeonInfo;
-import tools.PacketCreator;
+import net.PacketCreator;
 
 /**
  * @author Flav

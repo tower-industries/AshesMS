@@ -33,7 +33,7 @@ import scripting.npc.NPCScriptManager;
 import server.life.NPC;
 import server.life.PlayerNPC;
 import server.maps.MapObject;
-import tools.PacketCreator;
+import net.PacketCreator;
 
 public final class NPCTalkHandler extends AbstractPacketHandler {
     private static final Logger log = LoggerFactory.getLogger(NPCTalkHandler.class);

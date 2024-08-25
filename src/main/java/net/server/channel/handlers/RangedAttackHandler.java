@@ -48,7 +48,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import server.ItemInformationProvider;
 import server.StatEffect;
-import tools.PacketCreator;
+import net.PacketCreator;
 import tools.Randomizer;
 
 import static java.util.concurrent.TimeUnit.SECONDS;

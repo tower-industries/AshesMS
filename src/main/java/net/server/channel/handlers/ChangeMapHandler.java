@@ -35,7 +35,7 @@ import org.slf4j.LoggerFactory;
 import server.Trade;
 import server.maps.MapleMap;
 import server.maps.Portal;
-import tools.PacketCreator;
+import net.PacketCreator;
 
 import java.awt.*;
 import java.net.InetAddress;

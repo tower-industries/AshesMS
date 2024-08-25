@@ -46,7 +46,7 @@ import server.maps.MapManager;
 import server.maps.MapleMap;
 import server.maps.MiniDungeon;
 import server.maps.MiniDungeonInfo;
-import tools.PacketCreator;
+import net.PacketCreator;
 import tools.Pair;
 
 import java.io.IOException;

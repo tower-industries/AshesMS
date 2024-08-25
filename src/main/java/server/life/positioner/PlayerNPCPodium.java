@@ -28,7 +28,7 @@ import server.life.PlayerNPC;
 import server.maps.MapObject;
 import server.maps.MapObjectType;
 import server.maps.MapleMap;
-import tools.PacketCreator;
+import net.PacketCreator;
 
 import java.awt.*;
 import java.util.ArrayList;

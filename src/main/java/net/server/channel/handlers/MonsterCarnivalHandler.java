@@ -34,7 +34,7 @@ import server.life.Monster;
 import server.partyquest.CarnivalFactory;
 import server.partyquest.CarnivalFactory.MCSkill;
 import server.partyquest.MonsterCarnival;
-import tools.PacketCreator;
+import net.PacketCreator;
 import tools.Pair;
 
 import java.awt.*;

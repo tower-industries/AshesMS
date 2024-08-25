@@ -30,7 +30,7 @@ import client.inventory.manipulator.InventoryManipulator;
 import config.YamlConfig;
 import server.ItemInformationProvider;
 import server.StatEffect;
-import tools.PacketCreator;
+import net.PacketCreator;
 
 import java.util.List;
 

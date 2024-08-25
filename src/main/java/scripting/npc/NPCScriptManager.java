@@ -28,7 +28,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import scripting.AbstractScriptManager;
 import server.ItemInformationProvider.ScriptedItem;
-import tools.PacketCreator;
+import net.PacketCreator;
 
 import javax.script.Invocable;
 import javax.script.ScriptEngine;

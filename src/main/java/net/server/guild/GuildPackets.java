@@ -6,7 +6,7 @@ import net.opcodes.SendOpcode;
 import net.packet.OutPacket;
 import net.packet.Packet;
 import net.server.Server;
-import tools.PacketCreator;
+import net.PacketCreator;
 import tools.Pair;
 import tools.StringUtil;
 

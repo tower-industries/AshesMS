@@ -24,7 +24,7 @@ package net.server.handlers;
 import client.Client;
 import net.PacketHandler;
 import net.packet.InPacket;
-import tools.PacketCreator;
+import net.PacketCreator;
 
 public class CustomPacketHandler implements PacketHandler {
     @Override

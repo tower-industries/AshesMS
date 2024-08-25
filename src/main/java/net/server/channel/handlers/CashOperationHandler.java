@@ -42,7 +42,7 @@ import server.CashShop;
 import server.CashShop.CashItem;
 import server.CashShop.CashItemFactory;
 import server.ItemInformationProvider;
-import tools.PacketCreator;
+import net.PacketCreator;
 import tools.Pair;
 
 import java.util.Calendar;

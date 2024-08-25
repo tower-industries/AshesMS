@@ -28,7 +28,7 @@ import net.AbstractPacketHandler;
 import net.packet.InPacket;
 import net.server.coordinator.world.InviteCoordinator;
 import net.server.coordinator.world.InviteCoordinator.InviteType;
-import tools.PacketCreator;
+import net.PacketCreator;
 
 /**
  * @author Jay Estrella

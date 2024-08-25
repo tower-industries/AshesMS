@@ -50,7 +50,7 @@ function start() {
 
     const LifeFactory = Java.type('server.life.LifeFactory');
     const Point = Java.type('java.awt.Point');
-    const PacketCreator = Java.type('tools.PacketCreator');
+    const PacketCreator = Java.type('net.PacketCreator');
 
     var gcent = LifeFactory.getMonster(5220004);
     herbGarden.spawnMonsterOnGroundBelow(gcent, new Point(560, 50));

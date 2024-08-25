@@ -41,7 +41,7 @@ import constants.skills.Magician;
 import constants.skills.ThunderBreaker;
 import constants.skills.Warrior;
 import net.packet.InPacket;
-import tools.PacketCreator;
+import net.PacketCreator;
 import tools.Randomizer;
 
 import java.util.ArrayList;

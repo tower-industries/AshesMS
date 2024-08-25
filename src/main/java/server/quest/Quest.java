@@ -66,7 +66,7 @@ import server.quest.requirements.NpcRequirement;
 import server.quest.requirements.PetRequirement;
 import server.quest.requirements.QuestRequirement;
 import server.quest.requirements.ScriptRequirement;
-import tools.PacketCreator;
+import net.PacketCreator;
 import tools.StringUtil;
 
 import java.util.Collection;

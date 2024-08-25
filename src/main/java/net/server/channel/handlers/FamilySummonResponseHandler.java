@@ -12,7 +12,7 @@ import net.server.coordinator.world.InviteCoordinator.InviteResult;
 import net.server.coordinator.world.InviteCoordinator.InviteResultType;
 import net.server.coordinator.world.InviteCoordinator.InviteType;
 import server.maps.MapleMap;
-import tools.PacketCreator;
+import net.PacketCreator;
 
 public class FamilySummonResponseHandler extends AbstractPacketHandler {
 

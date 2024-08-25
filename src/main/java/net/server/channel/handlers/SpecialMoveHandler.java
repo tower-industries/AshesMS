@@ -38,7 +38,7 @@ import net.packet.InPacket;
 import net.server.Server;
 import server.StatEffect;
 import server.life.Monster;
-import tools.PacketCreator;
+import net.PacketCreator;
 
 import java.awt.*;
 

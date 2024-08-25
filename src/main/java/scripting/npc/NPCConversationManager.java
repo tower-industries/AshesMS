@@ -62,7 +62,7 @@ import server.partyquest.AriantColiseum;
 import server.partyquest.MonsterCarnival;
 import server.partyquest.Pyramid;
 import server.partyquest.Pyramid.PyramidMode;
-import tools.PacketCreator;
+import net.PacketCreator;
 import tools.packets.WeddingPackets;
 
 import java.awt.*;

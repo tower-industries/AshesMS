@@ -38,7 +38,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import server.ItemInformationProvider;
 import server.maps.MapleMap;
-import tools.PacketCreator;
+import net.PacketCreator;
 
 import java.awt.*;
 import java.util.ArrayList;

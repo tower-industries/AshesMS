@@ -29,7 +29,7 @@ import net.server.services.type.ChannelServices;
 import scripting.reactor.ReactorScriptManager;
 import server.TimerManager;
 import server.partyquest.GuardianSpawnPoint;
-import tools.PacketCreator;
+import net.PacketCreator;
 import tools.Pair;
 
 import java.awt.*;

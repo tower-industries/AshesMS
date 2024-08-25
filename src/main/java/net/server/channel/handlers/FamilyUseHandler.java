@@ -33,7 +33,7 @@ import net.server.coordinator.world.InviteCoordinator;
 import net.server.coordinator.world.InviteCoordinator.InviteType;
 import server.maps.FieldLimit;
 import server.maps.MapleMap;
-import tools.PacketCreator;
+import net.PacketCreator;
 
 /**
  * @author Moogra

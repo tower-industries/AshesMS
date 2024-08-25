@@ -187,7 +187,7 @@ function action(mode, type, selection) {
             if (state == 0) {    // give player blessings
                 eim.gridInsert(cm.getPlayer(), 1);
 
-                const PacketCreator = Java.type('tools.PacketCreator');
+                const PacketCreator = Java.type('net.PacketCreator');
                 if (YamlConfig.config.server.WEDDING_BLESSER_SHOWFX) {
                     var target = cm.getPlayer();
                     target.sendPacket(PacketCreator.showSpecialEffect(9));

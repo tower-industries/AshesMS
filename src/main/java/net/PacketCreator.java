@@ -18,7 +18,21 @@
  You should have received a copy of the GNU Affero General Public License
  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package tools;
+package net;
+
+import java.awt.Point;
+import java.net.InetAddress;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+import java.util.TimeZone;
+import java.util.stream.Collectors;
 
 import client.BuddylistEntry;
 import client.BuffStat;
@@ -109,20 +123,10 @@ import server.maps.PlayerShopItem;
 import server.maps.Reactor;
 import server.maps.Summon;
 import server.movement.LifeMovementFragment;
-
-import java.awt.*;
-import java.net.InetAddress;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-import java.util.TimeZone;
-import java.util.stream.Collectors;
+import tools.HexTool;
+import tools.Pair;
+import tools.Randomizer;
+import tools.StringUtil;
 
 /**
  * @author Frz

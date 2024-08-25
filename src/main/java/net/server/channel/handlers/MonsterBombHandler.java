@@ -26,7 +26,7 @@ import constants.id.MobId;
 import net.AbstractPacketHandler;
 import net.packet.InPacket;
 import server.life.Monster;
-import tools.PacketCreator;
+import net.PacketCreator;
 
 public final class MonsterBombHandler extends AbstractPacketHandler {
     @Override

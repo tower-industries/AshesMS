@@ -27,7 +27,7 @@ import client.QuestStatus;
 import constants.id.MapId;
 import scripting.AbstractPlayerInteraction;
 import server.quest.Quest;
-import tools.PacketCreator;
+import net.PacketCreator;
 
 public class MapScriptMethods extends AbstractPlayerInteraction {
 

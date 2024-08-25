@@ -25,7 +25,7 @@ import client.Character;
 import client.Client;
 import net.packet.InPacket;
 import server.maps.Summon;
-import tools.PacketCreator;
+import net.PacketCreator;
 import tools.exceptions.EmptyMovementException;
 
 import java.awt.*;

@@ -34,7 +34,7 @@ import org.slf4j.LoggerFactory;
 import server.TimerManager;
 import server.life.Monster;
 import server.maps.MapleMap;
-import tools.PacketCreator;
+import net.PacketCreator;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

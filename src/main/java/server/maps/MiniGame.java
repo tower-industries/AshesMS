@@ -25,7 +25,7 @@ import client.Character;
 import client.Client;
 import net.packet.Packet;
 import net.server.Server;
-import tools.PacketCreator;
+import net.PacketCreator;
 
 import java.util.ArrayList;
 import java.util.Collections;

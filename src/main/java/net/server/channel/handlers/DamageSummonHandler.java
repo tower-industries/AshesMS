@@ -28,7 +28,7 @@ import net.AbstractPacketHandler;
 import net.packet.InPacket;
 import server.maps.MapObject;
 import server.maps.Summon;
-import tools.PacketCreator;
+import net.PacketCreator;
 
 public final class DamageSummonHandler extends AbstractPacketHandler {
     @Override

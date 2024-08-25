@@ -39,7 +39,7 @@ import constants.skills.Rogue;
 import constants.skills.WindArcher;
 import net.packet.InPacket;
 import server.StatEffect;
-import tools.PacketCreator;
+import net.PacketCreator;
 import tools.Pair;
 
 import java.util.Collections;

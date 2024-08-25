@@ -4,7 +4,7 @@ import client.Client;
 import client.Family;
 import net.AbstractPacketHandler;
 import net.packet.InPacket;
-import tools.PacketCreator;
+import net.PacketCreator;
 
 public class FamilyPreceptsHandler extends AbstractPacketHandler {
 

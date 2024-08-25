@@ -36,7 +36,7 @@ import server.life.MonsterInformationProvider;
 import server.maps.MapObject;
 import server.maps.MapObjectType;
 import server.maps.MapleMap;
-import tools.PacketCreator;
+import net.PacketCreator;
 import tools.exceptions.EmptyMovementException;
 
 import java.awt.*;

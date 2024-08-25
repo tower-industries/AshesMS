@@ -24,7 +24,7 @@ package server.life;
 import client.Client;
 import server.ShopFactory;
 import server.maps.MapObjectType;
-import tools.PacketCreator;
+import net.PacketCreator;
 
 public class NPC extends AbstractLoadedLife {
     private final NPCStats stats;

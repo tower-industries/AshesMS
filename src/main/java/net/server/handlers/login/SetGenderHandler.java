@@ -27,7 +27,7 @@ import net.AbstractPacketHandler;
 import net.packet.InPacket;
 import net.server.Server;
 import net.server.coordinator.session.SessionCoordinator;
-import tools.PacketCreator;
+import net.PacketCreator;
 
 /**
  * @author kevintjuh93

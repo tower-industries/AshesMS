@@ -6,7 +6,7 @@ import constants.id.NpcId;
 import net.AbstractPacketHandler;
 import net.packet.InPacket;
 import server.minigame.RockPaperScissor;
-import tools.PacketCreator;
+import net.PacketCreator;
 
 /**
  * @Author Arnah

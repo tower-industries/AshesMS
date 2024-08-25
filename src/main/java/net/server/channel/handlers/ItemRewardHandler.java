@@ -31,7 +31,7 @@ import net.packet.InPacket;
 import net.server.Server;
 import server.ItemInformationProvider;
 import server.ItemInformationProvider.RewardItem;
-import tools.PacketCreator;
+import net.PacketCreator;
 import tools.Pair;
 import tools.Randomizer;
 

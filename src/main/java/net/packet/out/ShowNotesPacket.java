@@ -7,7 +7,7 @@ import note.Note;
 import java.util.List;
 import java.util.Objects;
 
-import static tools.PacketCreator.getTime;
+import static net.PacketCreator.getTime;
 
 public final class ShowNotesPacket extends ByteBufOutPacket {
 

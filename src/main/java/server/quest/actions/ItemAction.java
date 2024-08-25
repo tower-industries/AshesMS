@@ -34,7 +34,7 @@ import provider.DataTool;
 import server.ItemInformationProvider;
 import server.quest.Quest;
 import server.quest.QuestActionType;
-import tools.PacketCreator;
+import net.PacketCreator;
 import tools.Pair;
 import tools.Randomizer;
 

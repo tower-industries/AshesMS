@@ -26,7 +26,7 @@ import client.Character;
 import constants.id.MapId;
 import server.TimerManager;
 import server.maps.MapleMap;
-import tools.PacketCreator;
+import net.PacketCreator;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

@@ -27,7 +27,7 @@ function action(mode, type, selection) {
                 return;
             }
 
-            const PacketCreator = Java.type('tools.PacketCreator');
+            const PacketCreator = Java.type('net.PacketCreator');
             cm.getClient().sendPacket(PacketCreator.openRPSNPC());
             cm.dispose();
         }

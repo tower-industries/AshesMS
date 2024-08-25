@@ -27,7 +27,7 @@ import net.packet.InPacket;
 import net.server.Server;
 import net.server.channel.Channel;
 import net.server.world.World;
-import tools.PacketCreator;
+import net.PacketCreator;
 
 public final class CharlistRequestHandler extends AbstractPacketHandler {
 

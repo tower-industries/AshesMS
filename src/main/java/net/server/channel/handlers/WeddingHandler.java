@@ -21,7 +21,7 @@ import net.packet.InPacket;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import server.Marriage;
-import tools.PacketCreator;
+import net.PacketCreator;
 import tools.packets.WeddingPackets;
 
 import java.util.Collections;

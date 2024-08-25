@@ -29,7 +29,7 @@ import server.ItemInformationProvider;
 import server.movement.AbsoluteLifeMovement;
 import server.movement.LifeMovement;
 import server.movement.LifeMovementFragment;
-import tools.PacketCreator;
+import net.PacketCreator;
 import tools.Pair;
 
 import java.awt.*;

@@ -26,7 +26,7 @@ import client.Client;
 import net.AbstractPacketHandler;
 import net.packet.InPacket;
 import server.maps.MapObject;
-import tools.PacketCreator;
+import net.PacketCreator;
 
 public final class CharInfoRequestHandler extends AbstractPacketHandler {
 

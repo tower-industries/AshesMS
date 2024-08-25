@@ -24,7 +24,7 @@ package server.maps;
 import client.Character;
 import net.server.Server;
 import server.TimerManager;
-import tools.PacketCreator;
+import net.PacketCreator;
 
 import java.util.List;
 
