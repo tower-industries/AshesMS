@@ -25,7 +25,7 @@ import net.AbstractPacketHandler;
 import net.packet.InPacket;
 import scripting.event.EventInstanceManager;
 import net.PacketCreator;
-import net.WeddingPackets;
+import net.packet.WeddingPackets;
 
 /**
  * @author Ronan

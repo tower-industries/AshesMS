@@ -63,7 +63,7 @@ import server.partyquest.MonsterCarnival;
 import server.partyquest.Pyramid;
 import server.partyquest.Pyramid.PyramidMode;
 import net.PacketCreator;
-import net.WeddingPackets;
+import net.packet.WeddingPackets;
 
 import java.awt.*;
 import java.sql.SQLException;

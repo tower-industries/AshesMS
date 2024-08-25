@@ -4,21 +4,21 @@
  * and open the template in the editor.
  */
 
-package net;
+package net.packet;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import client.Character;
 import client.inventory.Item;
 import constants.id.ItemId;
 import constants.id.MapId;
+import net.PacketCreator;
 import net.opcodes.SendOpcode;
-import net.packet.OutPacket;
-import net.packet.Packet;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import tools.StringUtil;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * CField_Wedding, CField_WeddingPhoto, CWeddingMan, OnMarriageResult, and all Wedding/Marriage enum/structs.

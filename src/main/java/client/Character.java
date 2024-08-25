@@ -154,7 +154,7 @@ import tools.LongTool;
 import net.PacketCreator;
 import tools.Pair;
 import tools.Randomizer;
-import net.WeddingPackets;
+import net.packet.WeddingPackets;
 
 import java.awt.*;
 import java.lang.ref.WeakReference;
